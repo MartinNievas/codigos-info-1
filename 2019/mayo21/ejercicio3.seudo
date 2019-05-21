@@ -1,0 +1,7 @@
+Imprimir:"Ingrese la velocidad"
+Leer:vel
+Imprimir:"Ingrese el tiempo"
+Leer:tiempo
+esp = vel * tiempo
+
+Imprimir: "El espacio es : esp"
