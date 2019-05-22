@@ -1,0 +1,9 @@
+Imprimir:"Ingrese el precio"
+Leer:precio
+si precio es mayor que 1000 entonces
+  nuevo_precio = precio * 0.8
+  Imprimir:"El nuevo precio es: nuevo_precio"
+sino
+  Imprimir:"El precio es: precio"
+fin
+
