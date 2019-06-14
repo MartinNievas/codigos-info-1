@@ -1,5 +1,6 @@
 #include <stdio.h>
 #define CONSTANTE 2
+#define OTRA_CONST 2.0
 
 
 int main(void)
