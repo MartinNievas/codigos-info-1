@@ -6,7 +6,8 @@ int main(void)
   FILE *cfPtr; 
   char caracter;
 
-  if (( cfPtr = fopen("personas0.csv", "r") ) == NULL) 
+  cfPtr = fopen("personas0.csv", "r");
+  if ( cfPtr  == NULL) 
   {
     puts("El archivo no puede ser abierto");
   }
@@ -16,7 +17,7 @@ int main(void)
     
     while ( !feof(cfPtr) ) {
       caracter = fgetc(cfPtr);
-      printf("%c\n", caracter);
+      printf("%c", caracter);
     }
     fclose(cfPtr); // fclose closes file
   }
