@@ -38,7 +38,7 @@ int main(void)
   // Imprimir matriz rectangular
   for (i = 0; i < COLS; i++){
     for (j = 0; j < COLS; j++){
-      printf("%3d", matriz_cuadrada[i][j]);
+      printf("%3d", matriz_cuadrada[j][i]);
     }
     printf("\n");
   }
