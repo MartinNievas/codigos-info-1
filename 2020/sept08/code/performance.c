@@ -5,6 +5,20 @@
 #include "funciones_arreglos.h"
 
 
+int cmpfunc (const void * a, const void * b) {
+   return ( *(int*)a - *(int*)b );
+}
+
+
+// Burbuja "normal"
+// 7 segundos
+// < 1
+// 4
+// 0.4
+
+// Burbuja "normal"
+// La mitad
+
 int main(void)
 {
 
@@ -25,12 +39,24 @@ int main(void)
   end = omp_get_wtime();
   printf("ordena burbuja: %f\n", end-start);
 
-  cargar_arreglo(arreglo, tam);
+  //imprime_arreglo(arreglo,100);
+  //cargar_arreglo(arreglo, tam);
 
   start = omp_get_wtime();
   ordena_arreglo_burbuja_mejorado(arreglo, tam, swap_mayor);
   end = omp_get_wtime();
   printf("ordena burbuja mejorado: %f\n", end-start);
+
+  //imprime_arreglo(arreglo,100);
+
+  cargar_arreglo(arreglo, tam);
+
+  start = omp_get_wtime();
+  qsort(arreglo, tam, sizeof(int), cmpfunc);
+  end = omp_get_wtime();
+  printf("ordena burbuja mejorado: %f\n", end-start);
+
+  //imprime_arreglo(arreglo,100);
 
   int num;
   int pos;
