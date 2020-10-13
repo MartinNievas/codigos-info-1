@@ -19,11 +19,11 @@ int main() {
       printf("Prende\n");
       fprintf(fPtr, "%d", 3);
       sleep(1);
-
+      fflush(fPtr);
       printf("Apaga\n");
       fprintf(fPtr, "%d", 0);
       sleep(1);
-
+      fflush(fPtr);
     }
 
   }
