@@ -19,7 +19,7 @@ int main(void) {
   FILE *cfPtr;
   FILE *cfPtr_agregar;
 
-  if (( cfPtr = fopen("baseDeDatos.dat", "rwb+") ) == NULL) {
+  if (( cfPtr = fopen("baseDeDatos.dat", "rb+") ) == NULL) {
     puts("File could not be opened.");
   } else {
     unsigned int op;
