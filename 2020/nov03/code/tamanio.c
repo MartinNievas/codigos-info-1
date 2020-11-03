@@ -2,18 +2,32 @@
 
 typedef struct {
   int rgb[3];
+  /** int r; */
+  /** int g; */
+  /** int b; */
   float gamma;
 }pixel_t;
 
-
 typedef union {
-  int rgb[3];
-  float gamma;
+  int dato1;
+  float dato2;
 }pixel_u;
+
+// dato1  [] dato2 []
+//        []       []
+//        []       []
+//        []       []
 
 int main(void) {
 
+  pixel_u ejemplo;
 
-  printf("struct: %ld\nunion: %ld", sizeof(pixel_t), sizeof(pixel_u));
+  ejemplo.dato1 = 31;
+
+  ejemplo.dato2 = 90;
+
+  printf("%d\n", ejemplo.dato1);
+  printf("%f\n", ejemplo.dato2);
+
   return 0;
 }

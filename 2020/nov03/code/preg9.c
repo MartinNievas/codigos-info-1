@@ -1,8 +1,14 @@
 //Cuál es la expresión correcta para la sentencia de código que se encuentra
 //asociada al while?
 
+typedef struct {
+ int a;
+}ff_t;
+
 //...
 int main ( ) {
+  int a;
+  struct ff_t ff;
 // declaraciones correctas
 //...
 while ( calcula ( a) == ff. a ) {

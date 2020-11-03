@@ -5,7 +5,9 @@
 
 a. printf (“ %d”, TTT (struct dato t ));
 b. printf (“ %d”, * (TTT (a,b,c )));
-c. printf (“ %d”, * (TTT (a) ));
+
+-> c. printf (“ %d”, * (TTT (a) ));
+
 d. printf (“ %d”, * (TTT (struct dato a) ));
 e. printf (“ %d”, (TTT (a ) +i));
 
