@@ -3,11 +3,27 @@
 
 int main(void) {
 
-  int numero = 10;
+  int contrasenia = 1234;
+  int user_pass;
+  // if (condición)
+  // a ==  b -> son iguales
+  printf("Ingrese la contraseña: ");
+  scanf("%d", &user_pass);
 
-  if (numero == 10){
-    printf("Número vale 10!\n");
+  if (user_pass == contrasenia){
+    printf("La contraseña es válida\n");
   }
+  // a != b -> sean distintos
+  if (user_pass != contrasenia){
+    printf("Contraseña no válida\n");
+  }
+
+  if (user_pass == contrasenia){
+    printf("La contraseña es válida\n");
+  } else {
+    printf("Contraseña no válida\n");
+  }
+
 
   return 0;
 }
