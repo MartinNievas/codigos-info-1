@@ -2,13 +2,26 @@
 
 int main(void) {
 
-  int contador_1 = 0, contador_2 = -10;
-  float temperatura = 100.23;
+  int contador_0 = 100;
+  int contador_1 = 100;
 
-  printf("La temperatura es: %.10f\n", temperatura);
-  printf("Contador1: %d\nContador2: %d\n", 
-      contador_1,
-      contador_2);
+  // a == b -> si a es igual a b
+  //if (contador_0 == contador_1) {
+  //  printf("Los contadores son iguales\n");
+  //}
+
+  // a == b -> si a es diferente de b
+  //if (contador_0 != contador_1){
+  //  printf("Los contadores son diferentes\n");
+  //}
+
+  if (!(contador_0 == contador_1)) {
+    printf("Los contadores son iguales\n");
+  } else {
+    printf("Los contadores son diferentes\n");
+  }
+
+
 
 
   return 0;

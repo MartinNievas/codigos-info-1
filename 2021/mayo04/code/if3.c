@@ -8,9 +8,9 @@ int main(void) {
   scanf("%f", &temperatura);
 
   // a >= b -> si a es mayor o igual que b
-  if (temperatura >= 100){
+  if (temperatura >= 100)
     printf("Encender la ventilación\n");
-  } else{
+  else {
     printf("Apagar la ventilación\n");
     printf("La ventilación debe estar apagada\n");
   }

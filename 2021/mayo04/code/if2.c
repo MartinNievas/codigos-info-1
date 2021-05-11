@@ -2,7 +2,7 @@
 
 int main(void) {
 
-  float temperatura = 1.2;
+  float temperatura = 100;
 
   // a > b -> cuando a es mayor que b
   if (temperatura > 100 ){
