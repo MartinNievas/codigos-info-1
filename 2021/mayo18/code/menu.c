@@ -2,7 +2,7 @@
 
 int main(void) {
 
-  char letra = 97;
+  char letra = 'e';
 
   printf("Letra vale: %c\n", letra);
   printf("Letra vale: %d\n", letra);

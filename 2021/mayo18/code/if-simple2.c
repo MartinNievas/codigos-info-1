@@ -14,18 +14,18 @@ int main(void) {
   printf("Ingrese la temperatura: ");
   scanf("%d", &temperatura);
 
+  if ( !(temperatura < 0)){
+    printf("Es positiva\n");
+  }
+
   if (temperatura < 0){
     printf("Sólido\n");
-  }
-
-  if (temperatura >= 0){
+  } else {
     if (temperatura < 100){
       printf("Líquido\n");
+    } else {
+      printf("Gaseoso\n");
     }
-  }
-
-  if (temperatura >= 100){
-    printf("Gaseoso\n");
   }
 
   return 0;

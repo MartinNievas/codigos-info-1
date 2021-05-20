@@ -2,27 +2,27 @@
 
 int main(void) {
 
-  unsigned int nota = 11;
+  unsigned int nota = 12;
 
-  switch(nota){
-    case 10:
-    case 9:
-    case 8:
-      printf("Promocionado\n");
-      break;
-    case 7:
-    case 6:
-      printf("Aprobado\n");
-      break;
-    case 5:
-    case 4:
-    case 3:
-    case 2:
+  switch(nota)
+  {
     case 1:
-      printf("Libre\n");
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+      printf("Libre!\n"); break;
+    case 6:
+    case 7:
+      printf("Aprueba!\n");
+      break;
+    case 8:
+    case 9:
+    case 10:
+      printf("Promociona!\n");
       break;
     default:
-      printf("Nota no válida\n");
+      printf("La nota no es válida\n");
   }
 
   return 0;

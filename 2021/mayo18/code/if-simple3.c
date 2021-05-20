@@ -8,32 +8,17 @@
 
 int main(void) {
 
-  unsigned char nota; // 1 byte (0,255)
-  /** char nota2; //1 byte (-127,126) */
+  unsigned char nota;
 
   printf("Ingrese la nota: ");
   scanf("%hhu", &nota);
 
-  if (nota < 6){
+  if (nota >= 8)
+    printf("Promocionó\n");
+  else if (nota >= 6)
+    printf("Aprobado\n");
+  else
     printf("Libre\n");
-  } else {
-    if (nota >= 8){
-      printf("Promociona\n");
-    } else {
-        printf("Aprueba\n");
-    }
-  }
-
-  if (nota >= 8){
-    printf("Promociona\n");
-  } else {
-    if (nota < 6){
-      printf("Libre\n");
-    } else {
-      printf("Aprueba\n");
-    }
-  }
-
 
 
   return 0;

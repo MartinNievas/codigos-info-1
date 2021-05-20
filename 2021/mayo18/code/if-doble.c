@@ -3,13 +3,12 @@
 
 int main(void) {
 
-  float temperatura = 120.2;
+  float temperatura = 20;
 
-  if (temperatura >= 120.2){
+  if (temperatura >= 120.2)
     printf("Encender la ventilación\n");
-  } else {
+  else
     printf("Apagar la ventilación\n");
-  }
 
   return 0;
 }

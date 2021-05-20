@@ -2,12 +2,15 @@
 
 int main(void) {
 
-  char contador = 100;
+  char contador = 0;
 
-  if (contador == 12){
-    printf("Contador vale: %d\n", contador);
-    printf("Todavía estoy dentro del if\n");
+  if ( contador ){
+    contador = 5;
+  } else {
+    contador = -5;
   }
+
+  printf("Contador vale: %d\n", contador);
 
   printf("Fin del programa\n");
 
