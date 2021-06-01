@@ -7,12 +7,15 @@ int main(void) {
   int centinela = 1;
   int num;
 
-  while (centinela){
+  // 0 Falso
+  // Verdadera
+
+  while (centinela){ // Verdadera para centinela distinto de 0
     printf("Ingrese el número 23: ");
     scanf("%d", &num);
 
     if (num == 23){
-      centinela = 1;
+      centinela = 0;
     } else {
       printf("Número incorrecto\n");
     }

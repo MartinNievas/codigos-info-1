@@ -10,10 +10,10 @@ int main(void) {
     printf("Ingrese el número 23: ");
     scanf("%d", &num);
 
-    if (num == 23)
-      centinela = 1;
-    else
+    if (num != 23)
       printf("Número incorrecto\n");
+    else
+      centinela = 1;
   }
 
   printf("Usted ingresó el %d!\n", num);
