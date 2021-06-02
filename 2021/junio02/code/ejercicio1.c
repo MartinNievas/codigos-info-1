@@ -6,7 +6,20 @@
 
 int main(void) {
 
-  
+  int num;
+
+  printf("Ingrese el número: ");
+  scanf("%d", &num);
+
+  if (num >= 10 && num <= 100){
+    if (num % 2 == 0){
+      printf("El número es par\n");
+    } else {
+      printf("El número es impar\n");
+    }
+  } else {
+    printf("El número está fuera del rango\n");
+  }
 
   return 0;
 }

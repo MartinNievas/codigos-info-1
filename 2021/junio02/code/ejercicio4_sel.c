@@ -6,7 +6,36 @@
 
 int main(void) {
 
-  
+  int nota1, nota2, recu = 0;
+  float promedio = 0.;
 
+
+  printf("Ingrese la nota del primer parcial: ");
+  scanf("%d", &nota1);
+
+  printf("Ingrese la nota del segundo parcial: ");
+  scanf("%d", &nota2);
+
+  if (nota1 < 6){
+    printf("Ingrese la nota del recuperatorio: ");
+    scanf("%d", &recu);
+  } else if (nota2 < 6){
+    printf("Ingrese la nota del recuperatorio: ");
+    scanf("%d", &recu);
+  }
+
+  if (recu != 0){
+    promedio = (nota1 + nota2 + recu) / 3.;
+  } else {
+    promedio = (nota1 + nota2 ) / 2.;
+  }
+
+  if (promedio > 8){
+    printf("Pomociona\n");
+  } else if (promedio > 6){
+    printf("Aprueba\n");
+  } else {
+    printf("Desaprobado\n");
+  }
   return 0;
 }
