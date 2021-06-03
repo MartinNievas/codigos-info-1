@@ -7,17 +7,22 @@ int main(void) {
 
   char caracter;
 
-  printf("Ingrese el caracter: ");
+  printf("Ingrese: ");
   scanf("%c", &caracter);
 
-
-  if (caracter >= 48 && caracter <= 57){
-    printf("El caracter es un número\n");
-  } else if (caracter >= 65 && caracter <= 90) {
-    printf("El caracter es una letra\n");
+  // '0' -> 42
+  if (caracter >= '0' && caracter <= '9'){
+    printf("Es un número\n");
+  } else if (caracter >= 65 && caracter <= 90) { // 32 -> [space]
+    printf("Es una letra\n");
   } else if (caracter >= 97 && caracter <= 122) {
-    printf("El caracter es una letra\n");
+    printf("Es una letra\n");
   }
+
+  printf("%c el mismo pero + 32 %c\n", caracter, caracter+' ');
+
+
+
 
   return 0;
 }

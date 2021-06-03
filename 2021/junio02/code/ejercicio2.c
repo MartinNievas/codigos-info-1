@@ -5,19 +5,45 @@
 
 int main(void) {
 
+
   int num1, num2, num3;
 
-  if (num1 == num2 && num2 == num3){
-    printf("Los números son iguales\n");
-  } else {
-    if (num1 > num2 && num1 > num3){
-      printf("El primero es el más grande\n");
-    } else if (num2 > num1 && num2 > num3){
-      printf("El segundo es el mayor\n");
+  // ingresar los datos
+
+  if (num1 == num2){
+    if (num2 == num3){
+      printf("Los números son iguales\n");
     } else {
-      printf("El tercero es el mayor\n");
+      if (num1 > num2){  // num1 == num2
+        if (num1 > num3){
+          printf("El mayor es el primero\n");
+        } else {
+          printf("El mayor es el tercero\n");
+        }
+      } else {
+        if (num2 > num3){
+          printf("El mayor es el segundo\n");
+        } else {
+          printf("El mayor es el tercero\n");
+        }
+      }
+    }
+  } else {
+    if (num1 > num2){  // num1 != num2
+      if (num1 > num3){
+        printf("El mayor es el primero\n");
+      } else {
+        printf("El mayor es el tercero\n");
+      }
+    } else {
+      if (num2 > num3){
+        printf("El mayor es el segundo\n");
+      } else {
+        printf("El mayor es el tercero\n");
+      }
     }
   }
+
 
   return 0;
 }
