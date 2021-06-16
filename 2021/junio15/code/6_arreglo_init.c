@@ -4,7 +4,10 @@
 int main(void)
 {
   int i;
-  int arreglo1[TAM];
+  // La siguiente sentencia es incorrecta, necesitamos
+  // el tamaño del arreglo o poder inferirlo mediante
+  // la inicialización
+  int arreglo1[];
   // No imprime nada
   // Imprime basura
   // Tira warning

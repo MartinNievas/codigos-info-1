@@ -5,6 +5,7 @@ int main(void)
 {
   int i;
   float arreglo[TAM];
+  // Inicializar la variable del acumulador
   float suma = 0.;
 
   for (i = 0; i < TAM; i++) {
