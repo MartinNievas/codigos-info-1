@@ -16,6 +16,7 @@ int main(void) {
     for (int j = 0; j < COLS; j++)
       B[i][j] = 1.;
 
+  // A + B = C
   for (int i = 0; i < FILAS; i++)
     for (int j = 0; j < COLS; j++)
       C[i][j] = A[i][j] + B[i][j];

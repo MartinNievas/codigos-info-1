@@ -17,6 +17,7 @@ int main(void) {
     // recorrer las columnas
     for (j = 0; j < COLS ; j++)
       printf("%d ", matrix[i][j]);
+
     printf("\n");
   }
 

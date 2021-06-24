@@ -18,14 +18,28 @@ int main(void) {
   }
 
   float suma = 0;
-
+  // traza de una matriz
   for (i = 0; i < TAM; i++)
     for (j = 0; j < TAM; j++)
-      if (i == j)
+      if( i == j)
         suma += A[i][j];
 
-  printf("La suma es: %f\n", suma);
+  printf("La suma con if es: %f\n", suma);
+  suma = 0;
 
+  for (i = 0; i < TAM; i++)
+    suma += A[i][i];
+
+  printf("La suma con un solo for es: %f\n", suma);
+  suma = 0;
+
+  i = 0;
+  while (i < TAM){
+    suma += A[i][i];
+    i++;
+  }
+
+  printf("La suma con un while es: %f\n", suma);
 
   return 0;
 }
