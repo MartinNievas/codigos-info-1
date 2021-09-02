@@ -20,8 +20,10 @@ int main(void)
   promedio = 2;
   pp = &promedio;
 
-  printf("%f,%f,%f,%f\n", promedio, cuadrado_ref(pp), cuadrado_valor(promedio), promedio);
-  promedio = 2;
+  // 4, 4, 4, 2
+  //printf("%f,%f,%f,%f\n", promedio, cuadrado_ref(pp), cuadrado_valor(promedio), promedio);
+
+  // 4, 16, 4 , 2
   printf("%f,%f,%f,%f\n", promedio, cuadrado_valor(promedio), cuadrado_ref(pp), promedio);
 
   return 0;
