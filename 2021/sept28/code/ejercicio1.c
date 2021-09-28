@@ -46,7 +46,8 @@ void imprimir_alumnos(alumno_t *p, int tam){
     printf("Nombre: %s\n", (*(p+i)).personal.nombre);
     // En notación de arreglo
     printf("Apellido: %s\n", p[i].personal.apellido);
-    printf("DNI: %d\n", p[i].personal.dni);
+    // Notación de flecha
+    printf("DNI: %d\n", (p+i)->personal.dni);
     printf("Promedio: %f\n", p[i].promedio);
     printf("Legajo: %d\n", p[i].legajo);
   }

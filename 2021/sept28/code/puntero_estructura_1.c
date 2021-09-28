@@ -23,8 +23,11 @@ void sumar_puntos(struct punto_2D *a,struct punto_2D *b){
 int main(void) {
 
   struct punto_2D p1 = {1.0, 2.0}, p2 = {3.0, 5.0};
+  struct punto_2D *pp1;
 
-  sumar_puntos(&p1, &p2);
+  pp1 = &p1;
+
+  sumar_puntos(pp1, &p2);
 
   return 0;
 }

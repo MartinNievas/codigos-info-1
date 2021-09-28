@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define TAM 2
+#define TAM 3
 // Lo mismo que antes, pero ahora con estructuras
 
 
@@ -32,16 +32,22 @@ int main(void) {
   }
 
 
-  struct alu temp;;
-  for (int i = 0; i < TAM; i++){
-    for (int j = 0; j < TAM-1; j++){
-      if (alumnos[j].dni < alumnos[j+1].dni){
+  // Marcelo
+  // Mariano
+  // Martin
+  // Ordena por nombre
+  struct alu temp;
+  for (int k = 29; k >= 0; k--){
+    for (int i = 0; i < TAM; i++){
+      for (int j = 0; j < TAM-1; j++){
+        if (alumnos[j].nombre[k] > alumnos[j+1].nombre[k]){
 
-        // Puedo asignar una estructura a otra estructura
-        temp = alumnos[j];
-        alumnos[j] = alumnos[j+1];
-        alumnos[j+1] = temp;
+          // Puedo asignar una estructura a otra estructura
+          temp = alumnos[j];
+          alumnos[j] = alumnos[j+1];
+          alumnos[j+1] = temp;
 
+        }
       }
     }
   }

@@ -31,6 +31,12 @@ int main(void) {
   // Imprimir el arreglo ordenado
   imprimir_elementos(inventario, TAM);
 
+  // Ordenar por nombre de menor a mayor
+  //ordenar_elementos_nombre(inventario, TAM);
+
+  // Imprimir el arreglo ordenado por nombre
+  imprimir_elementos(inventario, TAM);
+
   return 0;
 }
 
@@ -38,7 +44,7 @@ int main(void) {
 // del elemento a cargar
 //
 // p: puntero a un arreglo de elementos de tipo parte_t
-// i: indice del elemento a cargar
+// idx: indice del elemento a cargar
 void cargar_elemento(parte_t *p, int idx)
 {
   // Solicitar datos y almacenarlos en el elemento i del arreglo
@@ -50,10 +56,8 @@ void cargar_elemento(parte_t *p, int idx)
 //
 // p: puntero a un arreglo de elementos de tipo parte_t
 // tam: cantidad de elementos en el arreglo
-void imprimir_elementos(parte_t *p, int idx)
+void imprimir_elementos(parte_t *p, int tam)
 {
-  // Solicitar datos y almacenarlos en el elemento i del arreglo
-  // mediante punteros
   // Completar...
 }
 

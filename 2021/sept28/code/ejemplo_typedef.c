@@ -1,12 +1,10 @@
 #include <stdio.h>
 // Apodos?
 
-struct punto_2D {
+typedef struct {
   float x;
   float y;
-};
-
-typedef struct punto_2D punto_2D_t;
+} punto_2D_t;
 
 int main(void) {
 
