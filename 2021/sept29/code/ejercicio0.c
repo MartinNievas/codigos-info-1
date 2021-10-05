@@ -47,7 +47,7 @@ int main(void) {
 // idx: indice del elemento a cargar
 void cargar_elemento(parte_t *p, int idx)
 {
-  // Solicitar datos y almacenarlos en el elemento i del arreglo
+  // Solicitar datos y almacenarlos en el elemento idx del arreglo
   // mediante punteros
   // Completar...
 }

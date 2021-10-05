@@ -1,10 +1,10 @@
 #include <stdio.h>
-#define TAM 3
+#define TAM 2
 // Lo mismo que antes, pero ahora con estructuras
 
 
 struct alu {
-  int dni;
+  unsigned int dni;
   float promedio;
   char nombre[30];
   char apellido[30];
@@ -31,22 +31,23 @@ int main(void) {
     alumnos[i].promedio = (alumnos[i].nota1+ alumnos[i].nota2)*0.5;
   }
 
-
+  // a,b,c,d,e
+  // 97,98,99
+  // A
+  // 75,78
+  //
   // Marcelo
-  // Mariano
-  // Martin
-  // Ordena por nombre
+  // Mriano
+  // Mfitin
   struct alu temp;
-  for (int k = 29; k >= 0; k--){
+  for( int k = 30 ; k >= 0 ; k--){
     for (int i = 0; i < TAM; i++){
       for (int j = 0; j < TAM-1; j++){
         if (alumnos[j].nombre[k] > alumnos[j+1].nombre[k]){
-
           // Puedo asignar una estructura a otra estructura
           temp = alumnos[j];
           alumnos[j] = alumnos[j+1];
           alumnos[j+1] = temp;
-
         }
       }
     }

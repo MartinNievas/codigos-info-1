@@ -1,4 +1,5 @@
 #include<stdio.h>
+
 struct punto_2D {
   float x ;
   float y ;
@@ -11,10 +12,11 @@ struct punto_3D {
 
 int main ( void )
 {
-  struct punto_3D punto1 = {1.1 ,2.3};
-  struct punto_3D punto2;
+  struct punto_2D p1 = {1.1 ,2.3};
+  struct punto_3D p2;
 
-  punto2 = punto1;
+  p2.x = p1.x;
+  p2.y = p1.y;
 
   return 0;
 }

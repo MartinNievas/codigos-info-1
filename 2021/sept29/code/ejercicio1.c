@@ -48,7 +48,8 @@ void imprimir_alumnos(alumno_t *p, int tam){
     printf("Apellido: %s\n", p[i].personal.apellido);
     // Notación de flecha
     printf("DNI: %d\n", (p+i)->personal.dni);
-    printf("Promedio: %f\n", p[i].promedio);
+    // Invertir puntero con el indice
+    printf("Promedio: %f\n", i[p].promedio);
     printf("Legajo: %d\n", p[i].legajo);
   }
 
