@@ -19,12 +19,23 @@ union byte_u {
   char num;
 };
 
+// campo.b0 num 0
+// campo.b1 num 1
+// campo.b2 num 2
+// campo.b3 num 3
+// campo.b4 num 4
+// campo.b5 num 5
+// campo.b6 num 6
+// campo.b7 num 7
+//
+// num = 00000100 = 4
+
 int main(void)
 {
 
   union byte_u miByte;
 
-  miByte.campo.b0 = 1;
+  miByte.campo.b2 = 1;
 
   printf("num: %d\n", miByte.num);
 

@@ -14,10 +14,10 @@ int main(void)
 
   campo_bits mis4bits;
 
-  mis4bits.b0 = 4;
+  mis4bits.b0 = 16;
   mis4bits.b1 = 0;
-  mis4bits.b2 = 0;
-  mis4bits.b3 = 0;
+  mis4bits.b2 = 1;
+  mis4bits.b3 = 1;
 
   printf("%u%u%u%u\n",  mis4bits.b0, mis4bits.b1,
                         mis4bits.b2, mis4bits.b3);

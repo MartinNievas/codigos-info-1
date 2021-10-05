@@ -7,7 +7,7 @@ union convertir_u{
 
 int main(void){
 
-  union converir_u conversor;
+  union convertir_u conversor;
 
   printf("----------Conversor decimal a HEXA----------\n\n");
   printf("Ingrese el valor flotante: ");

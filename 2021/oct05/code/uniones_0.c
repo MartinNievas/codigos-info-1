@@ -17,7 +17,7 @@ int main(void)
   printf("Asigno la parte entera\n");
   temperatura.i_temp = 10;
   printf("Valor de i_temp: %d\n", temperatura.i_temp);
-  printf("Valor de f_temp: %f\n", temperatura.f_temp);
+  printf("Valor de f_temp: %.50f\n", temperatura.f_temp);
 
   printf("\nAsigno la parte decimal\n");
   temperatura.f_temp = 0.123;
