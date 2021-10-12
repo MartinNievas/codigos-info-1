@@ -17,10 +17,13 @@ int main(void) {
     char nombre[10];
     char apellido[10];
     int id;
+
+    int centinela = 1;
     printf("Ingrese el nombre apellido e id: ");
     scanf("%10s%10s%d", nombre, apellido, &id);
 
-    while ( !feof(stdin) ) {
+    //while ( id != 1 ) {
+    while ( !feof(stdin) ){
 
       fprintf(cfPtr, "%s\t%s\t%d\n", nombre, apellido, id);
       printf("Ingrese el nombre apellido e id: ");

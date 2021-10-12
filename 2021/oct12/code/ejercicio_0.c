@@ -7,6 +7,7 @@
 //
 // Buscar el máximo en transacciones diarias
 // Buscar el máximo del 2020
+// Imprimir la fecha y la cantidad de operaciones para ambos casos
 
 int main(void) {
 
@@ -18,6 +19,8 @@ int main(void) {
   unsigned int date_unix;
   unsigned int id;
 
+  // date_UTC[7] == '1';
+
   if ( cfPtr  == NULL) {
     puts("El archivo no puede ser abierto\n");
   } else {
@@ -28,6 +31,7 @@ int main(void) {
     while ( !feof(cfPtr) ) {
       printf("%8s\t%u\t%d\n", date_UTC, date_unix, id);
       fscanf(cfPtr, "%s\t%u\t%d\n", date_UTC, &date_unix, &id);
+      // completar
     }
 
     fclose(cfPtr);

@@ -5,7 +5,6 @@ int main(void) {
 
   // Puntero a la estructura de tipo FILE
   FILE *cfPtr;
-  char caracter;
 
   // Cuando abrimos un archivo, nos devuelve un puntero a FILE
   cfPtr = fopen("nombres.txt", "r");

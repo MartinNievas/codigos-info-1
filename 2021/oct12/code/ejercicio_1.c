@@ -5,8 +5,9 @@
 // Binance Smart Chain.
 // Datos de: https://bscscan.com/chart/tx
 //
-// Buscar el máximo en transacciones diarias
-// Buscar el máximo del 2020
+// Buscar el precio máximo
+// Buscar el precio máximo del 2020
+// Imprimir la fecha y la cantidad de operaciones para ambos casos
 
 int main(void) {
 

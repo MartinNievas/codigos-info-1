@@ -39,6 +39,12 @@ int main(void) {
     int max = ids[0];
     int id_max = 0;
     // Buscar el máximo idx e imprimir valor, nombre y apellido
+    for (int i = 0; i < cont; i++){
+      if (ids[i] > max){
+        max = ids[i];
+        id_max = i;
+      }
+    }
     printf("\n\nEl máx es %d, y corresponde a  %s,%s\n", max, nombres[id_max], apellidos[id_max]);
 
 

@@ -19,7 +19,7 @@ int main(void)
     char nombre[20];
 
     while (!feof(fPtr)){
-      fscanf(fPtr, "%f,%d,%[A-za-z ]\n", &precio, &id, nombre);
+      fscanf(fPtr, "%f,%d,%[A-Za-z ]\n", &precio, &id, nombre);
       printf("%f,%d,%s\n", precio, id, nombre);
     }
 
