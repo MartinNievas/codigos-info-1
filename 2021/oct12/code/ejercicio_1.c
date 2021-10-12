@@ -2,8 +2,8 @@
 // Para resolver en clase
 //
 // El archivo contiene las cantidad de transacciones realizadas en la red
-// Binance Smart Chain.
-// Datos de: https://bscscan.com/chart/tx
+// de Ethereum
+// Datos de: https://etherscan.io/chart/etherprice
 //
 // Buscar el precio máximo
 // Buscar el precio máximo del 2020
