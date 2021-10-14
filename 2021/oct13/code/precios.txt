@@ -1,0 +1,2 @@
+id,marca,nombre,presentación,cat1,cat2,cat3
+123,algo,pepe,botella,0,0,0
