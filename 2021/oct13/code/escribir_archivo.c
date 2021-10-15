@@ -6,7 +6,7 @@ int main(void) {
   FILE *cfPtr;
 
   // Abrir el archivo
-  cfPtr = fopen("base_datos.txt", "a");
+  cfPtr = fopen("base_datos.txt", "r+");
 
   // Si no se abrió corréctamente, imprime el mensaje y termina
   if ( cfPtr  == NULL) {

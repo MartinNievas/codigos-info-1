@@ -12,7 +12,6 @@
 int main(void) {
 
   FILE *cfPtr;
-  char caracter;
 
   cfPtr = fopen("nombres.txt", "r");
 
@@ -26,9 +25,9 @@ int main(void) {
     int id;
     while ( !feof(cfPtr) ) {
 
-      fscanf(cfPtr, "%s\t%s\t%d", nombre, apellido, &id);
+      fscanf(cfPtr, "%s%s%d", nombre, apellido, &id);
 
-      printf("%s\t%s\t%d\n", nombre, apellido, id);
+      printf("%s,%s,%d\n", nombre, apellido, id);
 
     }
     fclose(cfPtr);

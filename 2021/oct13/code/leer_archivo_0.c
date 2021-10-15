@@ -20,7 +20,7 @@ int main(void) {
     // La función feof devuelve verdadero después de leer la siguiente
     // linea del final del archivo
     // Traducción: "¿Pasamos el final del archivo?"
-    while ( !feof(cfPtr) ) {
+    while ( !feof(stdin) ) {
 
       // Leemos un solo caracter del archivo y lo imprimimos en pantalla
       caracter = fgetc(cfPtr);
