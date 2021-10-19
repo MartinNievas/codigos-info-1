@@ -25,10 +25,9 @@ int main() {
       sleep(1);
 
     }
-
+    fclose(fPtr);
   }
 
-  fclose(fPtr);
 
   return 0;
 }

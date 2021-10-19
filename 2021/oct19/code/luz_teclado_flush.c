@@ -18,17 +18,17 @@ int main() {
     for (int i = 0; i < 100; i++) {
       printf("Prende\n");
       fprintf(fPtr, "%d", 1);
-      sleep(1);
       fflush(fPtr);
+      sleep(1);
       printf("Apaga\n");
       fprintf(fPtr, "%d", 0);
-      sleep(1);
       fflush(fPtr);
+      sleep(1);
     }
+    fclose(fPtr);
 
   }
 
-  fclose(fPtr);
 
   return 0;
 }

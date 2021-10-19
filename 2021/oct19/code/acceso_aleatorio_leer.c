@@ -12,7 +12,7 @@ typedef struct{
 int main(void)
 {
 
-  prod_t producto;
+  prod_t producto = {"",0,0.0};
   FILE *fPtr;
   int pos = 0;
 
@@ -25,16 +25,15 @@ int main(void)
 
     while (!feof(fPtr)) {
 
-      fread(&producto, sizeof(prod_t), 1, fPtr);
       if(producto.id != 0){
         printf("nombre: %s\n", producto.nombre);
         printf("precio: %f\n", producto.precio);
         printf("id: %ld\n", producto.id);
       }
+      fread(&producto, sizeof(prod_t), 1, fPtr);
     }
+    fclose(fPtr);
   }
-  fclose(fPtr);
-
 
   return 0;
 }

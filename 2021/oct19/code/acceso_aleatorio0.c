@@ -21,6 +21,11 @@ int main(void)
   }  else {
     printf("El archivo se pudo abrir de forma correcta\n");
 
+
+
+      producto.id = 0;
+      fseek(fPtr, producto.id* sizeof(prod_t), SEEK_SET);
+      fwrite(&producto, sizeof(prod_t), 1, fPtr);
     for ( int i = 0;  i < TAM;  i++){
       printf("Ingrese el nombre del producto: ");
       scanf("%s", producto.nombre);
