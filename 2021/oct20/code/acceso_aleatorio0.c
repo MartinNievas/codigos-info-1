@@ -2,8 +2,8 @@
 #define TAM 3
 
 typedef struct{
-  char nombre[20];
   long int id;
+  char nombre[20];
   float precio;
 }prod_t;
 

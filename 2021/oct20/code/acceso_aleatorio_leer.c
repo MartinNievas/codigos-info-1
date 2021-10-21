@@ -4,15 +4,15 @@
 // lista_binaria.dat mediante el programa acceso_aleatorio2.c
 
 typedef struct{
-  char nombre[20];
   long int id;
+  char nombre[20];
   float precio;
 }prod_t;
 
 int main(void)
 {
 
-  prod_t producto = {"",0,0.0};
+  prod_t producto = {0,"",0.0};
   FILE *fPtr;
 
   fPtr = fopen("lista_binaria.dat", "rb");

@@ -30,6 +30,10 @@ int main(void)
       scanf("%f", &producto.precio);
 
       fseek(fPtr, pos++ * sizeof(prod_t), SEEK_SET);
+      // SEEK_SET Desde el inicio del archivo
+      // SEEK_CUR Desde el el punto anterior
+      // SEEK_END Desde el final del archivo
+
       fwrite(&producto, sizeof(prod_t), 1, fPtr);
 
       printf("Ingrese el id: ");
