@@ -15,16 +15,18 @@ unsigned int imprimir_binario(unsigned int num)
 int main(void) {
 
   // modifical rvalue
-  int num = 2;
+  int num = (1<<10)+(1<<5);
 
 
-  int mascara = 1<<30;
+  int mascara = (1<<8)-1;
   printf("mascara: %d\n", mascara);
 
-  // numero  = 00000000000000000000000000000010
-  // mascara = 10000000000000000000000000000000
-  //         = 00000000000000000000000000000000
+  // numero  = 00000000000000000000010000100000
+  // mascara = 00000000000000000000000001111111
+  //         = 00000000000000000000000000100000
 
+  printf("mascara: \n");
+  imprimir_binario(mascara);
   printf("resultado: %u\n", imprimir_binario(num & mascara)); // & and
 
   return 0;
