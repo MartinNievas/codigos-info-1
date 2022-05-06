@@ -2,6 +2,7 @@
 // Abrir un proyecto en Zinjai, template: C en blanco
 
 // Ejercicio 5
+
 // En un local se hace un descuento del %20 cuando la compra supera los $ 1000. Escribir un
 // algoritmo que calcule el precio a pagar por el cliente teniendo como dato el valor de la compra.
 
