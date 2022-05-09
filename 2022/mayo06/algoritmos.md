@@ -30,7 +30,6 @@ fin
 [ Imprimir: "Ingrese el valor de la compra: "]
 
 
-
 ```
 Imprimir: "Ingrese el valor de la compra: "
 Leer: valor_compra
