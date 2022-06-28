@@ -1,0 +1,33 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+COLS	bidimensional.c	3;"	d	file:
+COLS	bidimensional2.c	3;"	d	file:
+COLS	image.c	4;"	d	file:
+FILAS	bidimensional.c	2;"	d	file:
+FILAS	bidimensional2.c	2;"	d	file:
+FILAS	image.c	3;"	d	file:
+TAM	busqueda_binaria.c	2;"	d	file:
+TAM	equivalencias.c	2;"	d	file:
+TAM	image.c	2;"	d	file:
+TAM	ndim.c	2;"	d	file:
+TAM	ordenar_y_buscar.c	4;"	d	file:
+TAM	ordenar_y_buscar_2.c	4;"	d	file:
+TAM	traza.c	2;"	d	file:
+main	aleatorio.c	/^int main(void) {$/;"	f
+main	bidimensional.c	/^int main(void) {$/;"	f
+main	bidimensional2.c	/^int main(void) {$/;"	f
+main	busqueda_binaria.c	/^int main(void) {$/;"	f
+main	equivalencias.c	/^int main(void) {$/;"	f
+main	goto.c	/^int main(void) {$/;"	f
+main	image.c	/^int main(void) {$/;"	f
+main	ndim.c	/^int main(void) {$/;"	f
+main	ordenar_y_buscar.c	/^int main(void) {$/;"	f
+main	ordenar_y_buscar_2.c	/^int main(void) {$/;"	f
+main	promocion.c	/^int main(void) {$/;"	f
+main	random.c	/^int main(void)$/;"	f
+main	random1.c	/^int main(void)$/;"	f
+main	traza.c	/^int main(void) {$/;"	f
