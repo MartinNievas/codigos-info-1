@@ -6,13 +6,11 @@
 
 int obtener_num_aleatorio(void)
 {
-  // Completar
-  return -11;
+  return (-10 + rand()%21);
 }
 
 int main(void) {
 
-  int num;
   srand(time(NULL));
 
   printf("Número aleatorio: %d\n", obtener_num_aleatorio());

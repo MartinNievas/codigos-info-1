@@ -6,9 +6,12 @@
 
 int obtener_num(void)
 {
-  int var = 101;
-  // Completar
-  //
+  int var;
+  do{
+    printf("Ingrese el número: ");
+    scanf("%d", &var);
+  }while(var < -10 || var > 100); // Repite mienras sea verdad
+
   return var;
 }
 

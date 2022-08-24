@@ -3,18 +3,18 @@
 // 0 1 2 3 4
 
 
-int obtener_contador(void)
+int obtener_num_incrementado(void)
 {
-  int num = 0;
+  static int num = 0;
 
-  return num++;
+  return num+=1;
 }
 
 
 int main(void) {
 
   for (int i = 0; i < 5; i++){
-    printf("%d ", obtener_contador());
+    printf("%d ", obtener_num_incrementado());
   }
 
   return 0;

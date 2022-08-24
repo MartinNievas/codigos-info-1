@@ -12,7 +12,10 @@ int obtener_filas(void)
 {
   int filas = 2;
 
-  // Completar
+  do {
+    printf("Ingrese filas: ");
+    scanf("%d", &filas);
+  } while (filas < 0 || filas > TAM);
 
   return filas;
 }
@@ -21,7 +24,10 @@ int obtener_columnas(void)
 {
   int columnas = 2;
 
-  // Completar
+  do {
+    printf("Ingrese columnas: ");
+    scanf("%d", &columnas);
+  } while (columnas < 0 || columnas > TAM);
 
   return columnas;
 }
