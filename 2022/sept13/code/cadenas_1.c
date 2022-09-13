@@ -4,7 +4,7 @@
 int main(void) {
 
   const char *cadena1 = "algo";
-  const char *cadena2 = "algo";
+  const char *cadena2 = "alga";
 
   // Comparar dos cadenas
   //

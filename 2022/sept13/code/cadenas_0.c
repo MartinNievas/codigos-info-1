@@ -8,7 +8,11 @@ int main(void) {
   char cadena3[100]= {0};
 
   // Concatenar cadenas
-  printf("Cadenas unidas: %s\n", strcat(cadena1, cadena2));
+  printf("Cadenas unidas: %s\n", strcat(strcat(cadena1," "), cadena2));
+
+  // cadena2 = cadena1; // No se puede copiar así
+
+
 
   // Comparar dos cadenas
   //

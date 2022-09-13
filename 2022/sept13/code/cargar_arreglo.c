@@ -30,19 +30,19 @@ void ingresar_datos_ar(int *a){
 void imprimir_arreglo(int *a){
 
   for (int i = 0; i < TAM; i++)
-    printf("%d ", *(a+i));
-
-}
-
-void imprimir_arreglo_como_arreglo(int *a){
-
-  for (int i = 0; i < TAM; i++)
-    printf("%d ", i[a]); // Permutamos a(dir del primer elemento)
-                         // con i (el índice del for)
+    printf("%d ", i[a]);
 
   // Magia
-  // *(a+i) <=> a[i]
-  // *(i+a) <=> i[a]
+  // a[i] <==> *(a+i)
+  // i[a] <==> *(i+a)
+
+  // printf("%d ", *(a+i)); // Base + indice
+}
+
+void imprimir_arreglo_como_arreglo(int a[]){
+
+  for (int i = 0; i < TAM; i++)
+    printf("%d\n", a[i]);
 
 }
 
@@ -57,8 +57,11 @@ int main(void) {
   printf("La dirección de p_arreglo es: %p\n", p_arreglo);
   printf("La dirección de arreglo es: %p\n", arreglo);
 
+  /** ingresar_datos(arreglo); */
   ingresar_datos_ar(arreglo);
+
   imprimir_arreglo_como_arreglo(arreglo);
+  imprimir_arreglo(arreglo);
 
 
   return 0;

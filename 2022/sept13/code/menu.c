@@ -14,11 +14,26 @@ int main(void) {
   };
 
   srand(time(NULL));
-  num = rand() % 4;
 
   // imprimir frase aleatoria con switch
-  //
+  printf("%s\n", frases[rand()%4]);
+
   // Cambiamos el switch por el printf
+  int op = rand()%4;
+  switch(op){
+  case 0:
+    printf("%s\n", frases[0]);
+  break;
+  case 1:
+    printf("%s\n", frases[1]);
+  break;
+  case 2:
+    printf("%s\n", frases[2]);
+  break;
+  case 3:
+    printf("%s\n", frases[3]);
+  break;
+  }
 
   return 0;
 }
