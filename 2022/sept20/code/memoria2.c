@@ -1,19 +1,22 @@
 #include <stdio.h>
 #define TAM 10
 
+void imprime_saludo(void)
+{
+  printf("Hola\n");
+}
+
 int main(void) {
 
-  long int arreglo[TAM];
-  int *pint;
-  char *pchar;
+  int arreglo[TAM];
+  int* parreglo;
 
-  for (int i = 0; i < TAM; i++)
-    printf("%p\n", &arreglo[i]);
+  parreglo = &arreglo[1];
 
-  printf("pchar: %ld\n", sizeof(pchar));
-  printf("pint: %ld\n", sizeof(pint));
-
-  printf("%ld\n", sizeof(arreglo));
+  printf("primero: %p\n", arreglo);
+  printf("primero: %p\n", &arreglo[0]);
+  imprime_saludo();
+  printf("función: %p\n", imprime_saludo);
 
   return 0;
 }

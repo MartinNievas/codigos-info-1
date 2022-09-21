@@ -4,14 +4,11 @@ int main(void)
 {
 
   int entero;
-  double decimal;
+  float flotante;
 
-  // float 32bits
-  // IEEE754
-
-  printf("Letra: %ld\n", sizeof(char));
-  printf("Entero: %ld\n", sizeof(entero));
-  printf("Double: %d\n", sizeof decimal);
+  printf("entero: %ld\n", sizeof(entero));
+  printf("flotante: %ld\n", sizeof(flotante));
+  printf("double: %ld\n", sizeof(double));
 
   return 0;
 }

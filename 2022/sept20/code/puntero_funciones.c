@@ -22,12 +22,12 @@ int min(int num1, int num2){
 
 int main(void)
 {
-  int (*fun[2])(int a, int b) = { min, min};
+  int (*fun[2])(int a, int b) = { max, min};
   int resultado;
   int temp1 = 100;
   int temp2 = 300;
 
-  resultado = fun[0](temp1, temp2);
+  resultado = fun[1](temp1, temp2);
 
   printf("El resultado es: %d\n", resultado);
 

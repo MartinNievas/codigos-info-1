@@ -13,12 +13,24 @@ void resta(int a, int b)
 int main(void)
 {
 
-  void (*temp)(int a, int b);
+  void (*puntero)(int, int);
+  int contador = 0;
+  puntero = resta;
 
   int op;
-  int num1, num2;
-  printf("Ingrese operación: ");
+  printf("Ingrese operación: \n");
   scanf("%d", &op);
+
+  switch(op){
+  case 0:
+    puntero = suma;
+  break;
+  case 1:
+    puntero = resta;
+  break;
+  }
+
+  puntero(1, 4);
 
 return 0;
 }

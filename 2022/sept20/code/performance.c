@@ -40,8 +40,9 @@ int ingresar_tam(void)
   * */
 void cargar_arreglo(int *a, int tam){
 
+  printf("Inicializando con números aleatorios\n");
   for (int i = 0; i < tam; i++)
-    *(a+i) = rand() % 1000;
+    *(a+i) = rand() % 100000;
 
 }
 
@@ -185,6 +186,7 @@ int main(void)
 
   //tam = ingresar_tam();
   tam = TAM;
+  printf("%d elementos\n", TAM);
 
   srand(time(NULL));
 
@@ -196,7 +198,7 @@ int main(void)
   printf("ordena burbuja: %f\n", end-start);
 
   //imprime_arreglo(arreglo,100);
-  //cargar_arreglo(arreglo, tam);
+  cargar_arreglo(arreglo, tam);
 
   start = omp_get_wtime();
     ordena_arreglo_burbuja_mejorado(arreglo, tam);
@@ -213,10 +215,6 @@ int main(void)
     qsort(arreglo, tam, sizeof(int), cmpfunc);
   end = omp_get_wtime();
   printf("ordena qsort: %f\n", end-start);
-  // 0.5s
-  // 1s
-  // 15ms
-  // 300ms
 
   //imprime_arreglo(arreglo,100);
 
@@ -225,6 +223,10 @@ int main(void)
 
   printf("Ingrese un elemento a buscar: ");
   scanf("%d", &num);
+
+  if (num == -1){
+    num = arreglo[TAM/2];
+  }
 
   // Si num existe, me devuelve la posición
   // si no existe, devuelve un -1
