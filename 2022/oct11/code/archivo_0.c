@@ -3,19 +3,19 @@
 
 int main(void) {
 
-  FILE *cfPtr;
+  FILE *fPtr;
   char caracter;
 
-  cfPtr = fopen("nombres.txt", "r");
-  if ( cfPtr  == NULL) {
+  fPtr = fopen("nombres.txt", "r");
+  if ( fPtr  == NULL) {
     puts("El archivo no puede ser abierto");
   } else {
     printf("Archivo abierto\n");
 
-    while ( !feof(cfPtr) ) {
-      caracter = fgetc(cfPtr);
+    while ( !feof(fPtr) ) {
+      caracter = fgetc(fPtr);
       printf("%c", caracter);
     }
-    fclose(cfPtr); // fclose closes file
+    fclose(fPtr); // fclose closes file
   }
 }
