@@ -3,10 +3,10 @@
 // Se declaran de forma similar a una estructura
 // notar que los miembros tienen :
 typedef struct{
-  unsigned char b0:4;
-  unsigned char b1:1;
-  unsigned char b2:1;
-  unsigned char b3:1;
+  unsigned char b0:8;
+  unsigned char b1:8;
+  unsigned char b2:8;
+  unsigned char b3:6;
 }campo_bits;
 
 int main(void)

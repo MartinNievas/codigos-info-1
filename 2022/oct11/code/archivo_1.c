@@ -14,7 +14,7 @@ int main(void) {
 
     while ( !feof(fPtr) ) {
       fscanf(fPtr,"%s%s%d", nombre, apellido, &num);
-      printf("%15s\t%15s\t%d\n", nombre, apellido, num);
+      printf("%15s\t%-15s\t%d\n", nombre, apellido, num);
     }
     fclose(fPtr); // fclose closes file
   }

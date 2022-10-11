@@ -2,12 +2,14 @@
 #define TAM 3
 // Completar en base a los comentarios
 
-typedef struct{
+typedef struct partes{
   char nombre[30];
   int num;
   float precio;
   int stock;
 }parte_t;
+
+typedef int enteros;
 
 // Prototipos
 void cargar_elemento(parte_t *, int);
@@ -16,6 +18,7 @@ void ordenar_elementos_precio(parte_t *, int);
 
 int main(void) {
 
+  enteros contador;
   parte_t inventario[TAM];
 
   // Cargar los datos de cada pieza mediante la función:
@@ -45,7 +48,7 @@ int main(void) {
 //
 // p: puntero a un arreglo de elementos de tipo parte_t
 // idx: indice del elemento a cargar
-void cargar_elemento(parte_t *p, int idx)
+void cargar_elemento(parte_t* p, int idx)
 {
   printf("Ingrese el nombre: ");
   scanf("%s", p[idx].nombre);
@@ -53,8 +56,8 @@ void cargar_elemento(parte_t *p, int idx)
   scanf("%d", &p[idx].num);
   printf("Ingrese el precio: ");
   scanf("%f", &p[idx].precio);
-  printf("Ingrse el stock: ");
-  scanf("%d", &p[idx].stock);
+  printf("Ingrese el stock: ");
+  scanf("%d", &(p+idx)->stock);
 }
 
 // Función que imprime un arreglo de estructuras de tipo parte_t
@@ -64,8 +67,17 @@ void cargar_elemento(parte_t *p, int idx)
 void imprimir_elementos(parte_t *p, int tam)
 {
   printf("%20s\t%s\t\t%s\t%s\n", "nombre", "precio", "número", "stock");
-  for (int i = 0; i < tam; i++)
-    printf("%20s\t%f\t%d\t%d\n", p[i].nombre, p[i].precio, p[i].num, p[i].stock);
+  for (int i = 0; i < tam; i++){
+    printf("%20s\t%f\t%d\t%d\n",p[i].nombre,
+                                p[i].precio,
+                                p[i].num,
+                                p[i].stock);
+
+    printf("%20s\t%f\t%d\t%d\n",(p+i)->nombre,
+                                (*(p+i)).precio,
+                                p[i].num,
+                                p[i].stock);
+  }
 }
 
 
