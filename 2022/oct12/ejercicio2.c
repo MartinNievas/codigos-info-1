@@ -29,6 +29,12 @@ int main(void) {
   // Imprimir los datos ingresados
   imprimir_alumnos(alumnos, TAM);
 
+  // Ordenarlos por legajo
+  ordenar_por_legajo(alumnos, TAM);
+
+  // Imprimir los datos ingresados
+  imprimir_alumnos(alumnos, TAM);
+
   return 0;
 }
 
