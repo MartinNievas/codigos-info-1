@@ -3,6 +3,27 @@
 
 // https://www.h-schmidt.net/FloatConverter/IEEE754.html
 // https://www.rapidtables.com/convert/number/binary-to-decimal.html
+// Estructura
+//  ____
+// |____| i_temp
+// |____|
+// |____|
+// |____|
+// |____| f_temp
+// |____|
+// |____|
+// |____|
+//
+// Unión
+//  ____
+// |____| i_temp f_temp
+// |____|
+// |____|
+//
+struct temp_t{
+  int i_temp;
+  float f_temp;
+};
 
 union temp_u{
   int i_temp;

@@ -27,16 +27,16 @@ int main(void) {
   // Imprimir el arreglo desordenado
   imprimir_elementos(inventario, TAM);
 
-  // ordenar_elementos_precio(inventario, TAM);
+  ordenar_elementos_precio(inventario, TAM);
 
   // Imprimir el arreglo ordenado
-  // imprimir_elementos(inventario, TAM);
+  imprimir_elementos(inventario, TAM);
 
   // Ordenar por nombre de menor a mayor
-  ordenar_elementos_nombre(inventario, TAM);
+  //ordenar_elementos_nombre(inventario, TAM);
 
   // Imprimir el arreglo ordenado por nombre
-  imprimir_elementos(inventario, TAM);
+  //imprimir_elementos(inventario, TAM);
 
   return 0;
 }

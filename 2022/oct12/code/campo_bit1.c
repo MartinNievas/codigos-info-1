@@ -28,14 +28,13 @@ union byte_u {
 // campo.b6 num 6
 // campo.b7 num 7
 //
-// num = 00000100 = 4
 
 int main(void)
 {
 
   union byte_u miByte;
 
-  miByte.campo.b2 = 1;
+  miByte.campo.b4 = 1; // 2^bit
 
   printf("num: %d\n", miByte.num);
 

@@ -56,8 +56,20 @@ void cargar_elemento(parte_t* p, int idx)
   scanf("%d", &p[idx].num);
   printf("Ingrese el precio: ");
   scanf("%f", &p[idx].precio);
+  // Aritmética de punteros
   printf("Ingrese el stock: ");
-  scanf("%d", &(p+idx)->stock);
+  scanf("%d", &(*(p+idx)).stock );
+
+  // scanf("%d", &(p+idx)->stock); // Con el operador flecha
+
+  // p[i] == i[p]
+  // *(p+i) == *(i+p)
+
+  // p La dirección del primer elemento del arreglo
+  // p+i La dirección del elemento i del arreglo
+  // *(p+i) Estructura des referenciada
+  // (*(p+i)).stock Obtengo el miembro stock
+
 }
 
 // Función que imprime un arreglo de estructuras de tipo parte_t
@@ -73,10 +85,6 @@ void imprimir_elementos(parte_t *p, int tam)
                                 p[i].num,
                                 p[i].stock);
 
-    printf("%20s\t%f\t%d\t%d\n",(p+i)->nombre,
-                                (*(p+i)).precio,
-                                p[i].num,
-                                p[i].stock);
   }
 }
 

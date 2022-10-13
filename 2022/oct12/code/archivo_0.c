@@ -1,9 +1,15 @@
 // data from: https://github.com/luisgagocasas/rrhh/blob/master/usuarios-csv.csv
 #include <stdio.h>
 
+// 1. Nombre y el modo
+// 2. Abrir
+// 3. Recorrerlo
+// 4. Cerrarlo
+
+
 int main(void) {
 
-  FILE *fPtr;
+  FILE* fPtr;
   char caracter;
 
   fPtr = fopen("nombres.txt", "r");
@@ -18,4 +24,6 @@ int main(void) {
     }
     fclose(fPtr); // fclose closes file
   }
+
+  return 0;
 }

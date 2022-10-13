@@ -2,14 +2,18 @@
 #define TAM 10
 
 typedef struct {
+  char nombre[30];
+  char apellido[30];
+  int dni;
+}personal_t;
+
+typedef struct {
   int legajo;
   float promedio;
 
-  struct {
-    char nombre[30];
-    char apellido[30];
-    int dni;
-  }personal;
+  personal_t personal;
+
+  personal_t* ppersonal;
 
 }alumno_t;
 
@@ -31,9 +35,22 @@ int main(void) {
   return 0;
 }
 
-void cargar_datos_alumno(alumno_t *p, int i){
+void cargar_datos_alumno(alumno_t* p, int i){
 
-  // Completar
+  printf("Ingrese el legajo: ");
+  scanf("%d", &p[i].legajo);
+  scanf("%d", &(p+i)->legajo);
+
+  printf("Ingrese el dni: ");
+  scanf("%d", &p[i].personal.dni);
+
+  printf("Ingrese el nombre: ");
+  scanf("%s", p[i].personal.nombre);
+  scanf("%s", (p+i)->personal.nombre);
+
+  p[i].ppersonal = &p[i].personal;
+
+  scanf("%s", (p+i)->ppersonal->nombre);
 
 }
 

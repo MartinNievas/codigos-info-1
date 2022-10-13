@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define TAM 10
+#define TAM 3
 
 typedef struct {
   int legajo;
@@ -14,6 +14,9 @@ typedef struct {
 
 }alumno_t;
 
+void ordenar_por_nombre(alumno_t *, int);
+void ordenar_por_legajo(alumno_t *, int);
+void ordenar_por_dni(alumno_t *, int);
 void cargar_datos_alumno(alumno_t *, int);
 void imprimir_alumnos(alumno_t *, int);
 
@@ -29,8 +32,16 @@ int main(void) {
   // Imprimir los datos ingresados
   imprimir_alumnos(alumnos, TAM);
 
+  printf("\nOrdenado por legajo:\n\n");
   // Ordenarlos por legajo
   ordenar_por_legajo(alumnos, TAM);
+
+  // Imprimir los datos ingresados
+  imprimir_alumnos(alumnos, TAM);
+
+  printf("\nOrdenado por 3 primeras letras:\n\n");
+  // Ordenarlos por legajo
+  ordenar_por_nombre(alumnos, TAM);
 
   // Imprimir los datos ingresados
   imprimir_alumnos(alumnos, TAM);
@@ -40,7 +51,11 @@ int main(void) {
 
 void cargar_datos_alumno(alumno_t* p, int i){
 
-  // Completar
+  printf("Ingrese el nombre: ");
+  scanf("%s", p[i].personal.nombre);
+
+  printf("Ingrese el legajo: ");
+  scanf("%d", &p[i].legajo);
 
 }
 
@@ -62,14 +77,46 @@ void imprimir_alumnos(alumno_t* p, int tam){
 }
 
 void ordenar_por_legajo(alumno_t* p, int tam){
-  // Completar
+
+  for (int i = 0; i < tam; i++){
+    for (int j = 0; j < tam - i - 1; j++){
+      alumno_t temp;
+      if (p[j].legajo > p[j+1].legajo){
+        temp = p[j];
+        p[j] = p[j+1];
+        p[j+1] = temp;
+      }
+    }
+  }
 }
 
 void ordenar_por_dni(alumno_t* p, int tam){
-  // Completar
+
+  for (int i = 0; i < tam; i++){
+    for (int j = 0; j < tam - i - 1; j++){
+      alumno_t temp;
+      if (p[j].personal.dni > p[j+1].personal.dni){
+        temp = p[j];
+        p[j] = p[j+1];
+        p[j+1] = temp;
+      }
+    }
+  }
 }
 
 /** Ordenar por las 3 primeras letras del nombre */
 void ordenar_por_nombre(alumno_t* p, int tam){
-  // Completar
+
+  for (int letra = 2; letra >= 0; letra--){
+    for (int i = 0; i < tam; i++){
+      for (int j = 0; j < tam - i - 1; j++){
+        alumno_t temp;
+        if (p[j].personal.nombre[letra] > p[j+1].personal.nombre[letra]){
+          temp = p[j];
+          p[j] = p[j+1];
+          p[j+1] = temp;
+        }
+      }
+    }
+  }
 }
