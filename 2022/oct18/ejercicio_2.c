@@ -5,16 +5,42 @@
 // Repita este proceso para el tercer y cuarto caracter.
 // El programa debe generar los caracteres en su formato de bits antes y después de que se empaqueten en el int para demostrar que los caracteres están empaquetados correctamente en la variable sin int.
 
-void PackCharacters(char* cadena, unsigned int* num);
+void imprimir_binario(unsigned int num)
+{
+  for (int i = 31; i >= 0; i--){
+    printf("%c", (num & 1<<i) ? '1' : '0');
+    if (i % 8 == 0)
+      printf(" ");
+  }
+  printf("\n");
+}
+
+void PackCharacters(char* cadena, unsigned int* num){
+
+  for (int i = 0; i < 4; i++){
+    *num |= cadena[i]<<(i*8);
+    imprimir_binario(*num);
+  }
+
+}
 
 int main(void) {
 
-  char letras[4];
+  char letras[4] = "aaaa";
   unsigned int num = 0;
+  // 1100001 = 97 = a
+  // 1100001 = 97 = a
+  // 1100001 = 97 = a
+  // 1100001 = 97 = a
+  //                      1100001
+  // 0000000000000000000000000000
+  //               1100001
+  //        1100001
+  // 1100001
 
-  printf("Antes del llamado: %lu\n", num);
+  printf("\nAntes del llamado: %lu\n", num);
   PackCharacters(letras, &num);
-  printf("Después del llamado: %lu\n", num);
+  printf("\nDespués del llamado: %lu\n", num);
 
   return 0;
 }

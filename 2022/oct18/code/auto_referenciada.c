@@ -1,12 +1,11 @@
 #include <stdio.h>
 
-
 struct producto {
   float precio;
   char nombre[40];
 
   // struct producto taza; // ERROR
-  struct producto *pproducto; // Si se puede
+  struct producto* pproducto; // Si se puede
 };
 
 int main(void) {

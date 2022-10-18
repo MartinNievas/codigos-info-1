@@ -5,13 +5,13 @@ void imprimirBinario(unsigned int);
 int main(void) {
 
   unsigned int numero_1 = 65535;
-  unsigned int mascara = 1;
+  unsigned int mascara = 1<<16;
 
   puts("\nNúmeros:");
   imprimirBinario(numero_1);
   imprimirBinario(mascara);
 
-  puts("Operación AND &");
+  puts("Operación AND &"); // No es lo mismo que &&
   imprimirBinario( numero_1 & mascara );
   // demonstrate bitwise inclusive OR (|)
 
@@ -33,7 +33,7 @@ int main(void) {
   imprimirBinario( numero_1 ^ mascara );
 
   puts("\nNúmero:");
-  numero_1 = 21845;
+  numero_1 = -21845;
   imprimirBinario(numero_1);
   puts("\nComplemento a uno:");
   imprimirBinario( ~numero_1 );
