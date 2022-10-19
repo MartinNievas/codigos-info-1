@@ -67,16 +67,18 @@ int main( int argc, char * argv[] )
   curl_easy_setopt(curl, CURLOPT_URL, myurl );
   curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L );
 
-  /* Enviar la información a la función */
+  /* Enviar la información de respuesta a la función */
   curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_callback );
-  curl_easy_setopt(curl, CURLOPT_HEADERFUNCTION, header_callback );
+
+  /* Enviar la información de respuesta del encabezado a la función */
+  // curl_easy_setopt(curl, CURLOPT_HEADERFUNCTION, header_callback );
 
   /* Preparamos el callback para cuando la API responda */
   curl_easy_setopt(curl, CURLOPT_WRITEDATA, &strbuf );
-  curl_easy_setopt(curl, CURLOPT_HEADERDATA, &strbuf );
+  // curl_easy_setopt(curl, CURLOPT_HEADERDATA, &strbuf );
 
-  //curl_easy_setopt(curl, CURLOPT_VERBOSE, 1L);
-  //curl_easy_setopt(curl, CURLOPT_HEADER, 1L);
+  // curl_easy_setopt(curl, CURLOPT_VERBOSE, 1L);
+  // curl_easy_setopt(curl, CURLOPT_HEADER, 1L);
   /* get it! */
   res = curl_easy_perform(curl);
   /* check for errors */
@@ -88,16 +90,23 @@ int main( int argc, char * argv[] )
     return EXIT_FAILURE;
   }
 
-  /*
-   * Now, our strbuf.ptr points to a memory block that is strbuf.len
-   * bytes big and contains the remote resource.
+  /*--------------------------------------------------------------------------------
+   * En strbuf.ptr tenemos la cadena con la respuesta desde la API
    *
-   * Do something nice with it!
+   * Tenemos que procesar estos datos. Completar desde acá
+   *--------------------------------------------------------------------------------
    */
   printf( "%s\n\n", strbuf.ptr );
   printf("%lu bytes retrieved\n", (unsigned long)strbuf.len);
 
-  /* cleanup curl stuff */
+
+  /*--------------------------------------------------------------------------------
+   * Hasta acá
+   *--------------------------------------------------------------------------------
+   * */
+
+
+  /* Limpia el buffer */
   curl_easy_cleanup( curl );
   string_buffer_finish( &strbuf );
   return EXIT_SUCCESS;
