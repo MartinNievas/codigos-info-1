@@ -1,6 +1,4 @@
 #include <stdio.h>
-:q
-q
 // El operador de desplazamiento se puede usar para almacenar valores de cuatro caracteres en una variable ints de cuatro bytes.
 // Escriba un programa que ingrese a cuatro caracteres desde el teclado y los pasa a funciones PackCharacters.
 // Para empacar cuatro caracteres en una variable int, asigne el primer carácter a la variable unsigned int, desplazar la variable unsigned int en 8 bits y combinar la variable con el segundo carácter utilizando el operador |
@@ -17,13 +15,19 @@ void imprimir_binario(unsigned int num)
   printf("\n");
 }
 
+void PackCharacters(char* cadena, unsigned int* num){
+
+  for (int i = 0; i < 4; i++)
+    *num |= cadena[i]<<(i*8);
+
+}
+
 int main(void) {
 
   char letras[4] = "aaaa";
   unsigned int num = 0;
 
-  printf("\nAntes del llamado %lu: ", num);
-  imprimir_binario(num);
+  printf("\nAntes del llamado: %lu\n", num);
   PackCharacters(letras, &num);
   printf("\nDespués del llamado %lu: ", num);
   imprimir_binario(num);

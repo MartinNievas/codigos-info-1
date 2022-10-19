@@ -14,9 +14,19 @@ int main(void) {
   unsigned int mascara;
 
   printf("num: %f\n", conversor.num_f);
+  // float: 1.123
+  // 0 01111111 00011111011111001110111
+  // s      exp                 mantisa
+  // mascara: 1 desplazado 32
+  // 1<<31
+  // 1000000000000000000000000000000
+  mascara = 1<<31;
+  // ~ NOT
+  // | OR
+  // & AND
+  // ^ XOR - OR exclusiva
 
-
-  // conversor.num_u^=mascara;
+  conversor.num_u^=mascara;
   // conversor.num_u&=mascara;
   // conversor.num_u = conversor.num_u | mascara;
 

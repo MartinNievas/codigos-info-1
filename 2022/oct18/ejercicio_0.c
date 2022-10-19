@@ -40,10 +40,6 @@ int main(void) {
   paquete_t paquetes_b[TAM];
 
   // Validar cantidad
-  while (cantidad < 0 || cantidad > TAM){
-    printf("Ingrese la cantidad: ");
-    scanf("%d", &cantidad);
-  }
 
   // Cargar paquetes
   cargar_paquetes(paquetes, cantidad);
@@ -61,62 +57,4 @@ int main(void) {
   imprimir_paquetes(paquetes_b, cantidad);
 
   return 0;
-}
-
-void cargar_paquetes(paquete_t* arreglo, int tam){
-
-  for (int i = 0; i < tam; i++){
-    printf("Ingrese el id: ");
-    scanf("%u", &arreglo[i].id);
-    printf("Ingrese el peso: ");
-    scanf("%f", &arreglo[i].peso);
-
-    if (arreglo[i].peso < 100){
-      arreglo[i].categoria = 'A';
-    } else {
-      arreglo[i].categoria = 'B';
-    }
-
-    // var1 = cond ? valor_verdadero : valor_falso;
-    arreglo[i].categoria = arreglo[i].peso < 100 ? 'A' : 'B';
-
-    printf("Ingrese el origen: ");
-    scanf("%s", arreglo[i].description.origen);
-    // scanf("%s", (arreglo+i)->description.origen);
-    printf("Ingrese el destino: ");
-    scanf("%s", arreglo[i].description.destino);
-    // scanf("%s", (arreglo+i)->description.destino);
-  }
-}
-
-void imprimir_paquetes(paquete_t* arreglo, int tam){
-
-  for (int i = 0; i < tam; i++){
-    printf("id: %u\n", arreglo[i].id);
-    printf("peso: %f\n", arreglo[i].peso);
-    printf("categoría: %c\n", arreglo[i].categoria);
-    printf("origen: %s\n", (arreglo+i)->description.origen);
-    printf("destino: %s\n", arreglo[i].description.detino);
-  }
-
-}
-
-void imprimir_paquetes_categoria_B(paquete_t* arreglo, int tam){
-
-  for (int i = 0; i < tam; i++)
-    if (arreglo[i].categoria == 'B')
-      imprimir_elementos(arreglo+i,1);
-
-}
-
-void imprimir_paquetes_categoria_A(paquete_t* arreglo, int tam){
-
-  for (int i = 0; i < tam; i++)
-    if ((arreglo+i)->categoria == 'A')
-      imprimir_elementos(arreglo+i,1);
-
-}
-
-void copiar_paquetes(paquete_t* arreglo_a, paquete_t* arreglo_b){
-
 }
