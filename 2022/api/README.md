@@ -15,3 +15,7 @@ gcc httpget.c -lcurl -o httpget
 ```bash
 $./httpget "https://api.telegram.org/bot<bot_token>/sendMessage?chat_id=<chat_ID>&text=Hola Mundo "
 ```
+4. Probar bondis:
+```bash
+./a.out "https://cordobus.apps.cordoba.gob.ar/tracking/api/internos-activos-ahora/?linea=43"
+```
