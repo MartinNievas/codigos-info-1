@@ -52,17 +52,27 @@ static size_t write_callback( void * buf, size_t size, size_t nmemb, void * data
 
 int main( int argc, char * argv[] )
 {
-  CURL * curl;
+  CURL * curl_api1;
+  CURL * curl_api2;
   CURLcode res;
   string_buffer_t strbuf;
-  char * myurl = argv[1]; // Esta URL viene de stdin
+  char * url_api1 = argv[1]; // Esta URL viene de stdin
+  char * url_api2 = argv[2]; // Esta URL viene de stdin
   //"https://api.telegram.org/bot ......bot_token...../sendMessage?chat_id=....&text=Hola%20Luis";
   string_buffer_initialize( &strbuf );
 
-  /* Inicializar la sesión de curl */
+  /* Inicializar la sesión de curl_api1 */
 
-  curl = curl_easy_init();
-  if(!curl)
+  curl_api1 = curl_easy_init();
+  if(!curl_api1)
+  {
+    fprintf(stderr, "Fatal: curl_easy_init() error.\n");
+    string_buffer_finish( &strbuf );
+    return EXIT_FAILURE;
+  }
+
+  curl_api2 = curl_easy_init();
+  if(!curl_api2)
   {
     fprintf(stderr, "Fatal: curl_easy_init() error.\n");
     string_buffer_finish( &strbuf );
@@ -70,28 +80,28 @@ int main( int argc, char * argv[] )
   }
 
   /* Especificar la URL a consultar */
-  curl_easy_setopt(curl, CURLOPT_URL, myurl );
-  curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L );
+  curl_easy_setopt(curl_api1, CURLOPT_URL, url_api1 );
+  curl_easy_setopt(curl_api1, CURLOPT_FOLLOWLOCATION, 1L );
 
   /* Enviar la información de respuesta a la función */
-  curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_callback );
+  curl_easy_setopt(curl_api1, CURLOPT_WRITEFUNCTION, write_callback );
 
   /* Enviar la información de respuesta del encabezado a la función */
-  // curl_easy_setopt(curl, CURLOPT_HEADERFUNCTION, header_callback );
+  // curl_easy_setopt(curl_api1, CURLOPT_HEADERFUNCTION, header_callback );
 
   /* Preparamos el callback para cuando la API responda */
-  curl_easy_setopt(curl, CURLOPT_WRITEDATA, &strbuf );
-  // curl_easy_setopt(curl, CURLOPT_HEADERDATA, &strbuf );
+  curl_easy_setopt(curl_api1, CURLOPT_WRITEDATA, &strbuf );
+  // curl_easy_setopt(curl_api1, CURLOPT_HEADERDATA, &strbuf );
 
-  // curl_easy_setopt(curl, CURLOPT_VERBOSE, 1L);
-  // curl_easy_setopt(curl, CURLOPT_HEADER, 1L);
+  // curl_easy_setopt(curl_api1, CURLOPT_VERBOSE, 1L);
+  // curl_easy_setopt(curl_api1, CURLOPT_HEADER, 1L);
   /* get it! */
-  res = curl_easy_perform(curl);
+  res = curl_easy_perform(curl_api1);
   /* check for errors */
   if( res != CURLE_OK )
   {
     fprintf( stderr, "Request failed: curl_easy_perform(): %s\n", curl_easy_strerror(res) );
-    curl_easy_cleanup( curl );
+    curl_easy_cleanup( curl_api1 );
     string_buffer_finish( &strbuf );
     return EXIT_FAILURE;
   }
@@ -124,14 +134,34 @@ int main( int argc, char * argv[] )
   printf("La longitud es: %s\n", length_cadena);
 
 
+  string_buffer_initialize( &strbuf );
+  char mensaje_enviar[300] = {0};
+  strcat(mensaje_enviar, url_api2);
+  strcat(mensaje_enviar, frase_cadena);
+
+  // Acá empieza el mensaje para la API de telegram
+  curl_easy_setopt(curl_api2, CURLOPT_URL, mensaje_enviar );
+  curl_easy_setopt(curl_api2, CURLOPT_WRITEDATA, &strbuf );
+  curl_easy_setopt(curl_api2, CURLOPT_WRITEFUNCTION, write_callback );
+
+  res = curl_easy_perform(curl_api2);
+  /* check for errors */
+  if( res != CURLE_OK )
+  {
+    fprintf( stderr, "Request failed: curl_easy_perform(): %s\n", curl_easy_strerror(res) );
+    curl_easy_cleanup( curl_api2 );
+    string_buffer_finish( &strbuf );
+    return EXIT_FAILURE;
+  }
+
   /*--------------------------------------------------------------------------------
    * Hasta acá
    *--------------------------------------------------------------------------------
    * */
 
-
   /* Limpia el buffer */
-  curl_easy_cleanup( curl );
+  curl_easy_cleanup( curl_api1 );
+  curl_easy_cleanup( curl_api2 );
   string_buffer_finish( &strbuf );
   return EXIT_SUCCESS;
 }

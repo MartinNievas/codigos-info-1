@@ -15,8 +15,9 @@ gcc httpget.c -lcurl -o httpget
 $./httpget "https://api.telegram.org/bot<bot_token>/sendMessage?chat_id=<chat_ID>&text=Hola Mundo "
 ```
 ## Probar gatos:
+Reemplazar `<bot-token` y `<chat-id>` con los valores del bot:
 ```bash
-./a.out "https://catfact.ninja/fact"
+./a.out "https://catfact.ninja/fact" "https://api.telegram.org/bot<bot-token>/sendMessage?chat_id=<chat-id>="
 ```
 ## Probar bondis:
 ```bash
