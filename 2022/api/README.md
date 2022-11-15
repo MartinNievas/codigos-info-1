@@ -17,10 +17,12 @@ $./httpget "https://api.telegram.org/bot<bot_token>/sendMessage?chat_id=<chat_ID
 ## Probar gatos:
 Reemplazar `<bot-token` y `<chat-id>` con los valores del bot:
 ```bash
-./a.out "https://catfact.ninja/fact" "https://api.telegram.org/bot<bot-token>/sendMessage?chat_id=<chat-id>="
+gcc httpget_cats.c cJSON.c -lcurl -o a.out
+./a.out "https://catfact.ninja/fact" "https://api.telegram.org/bot<bot-token>/sendMessage?chat_id=<chat-id>=&text="
 ```
 ## Probar bondis:
 ```bash
+gcc httpget_bondi.c cJSON.c -lcurl -o a.out
 ./a.out "https://cordobus.apps.cordoba.gob.ar/tracking/api/internos-activos-ahora/?linea=43"
 ```
 
