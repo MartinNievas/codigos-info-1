@@ -1,0 +1,18 @@
+Pseudocódigo
+
+Escribir un programa que calcule la potencia x = num1^num2 , donde num1
+y num2 son números enteros positivos ingresados por el usuario.
+
+Inicio
+Imprimir: "Ingrese num1"
+Leer: num1
+Imprimir: "Ingrese num2"
+Leer: num2
+contador = 0
+resultado = 1
+mientras contador < num2 hacer
+  resultado = resultado * num1
+  contador = contador + 1
+fin mientras
+Imprimir: resultado
+
