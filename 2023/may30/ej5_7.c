@@ -11,7 +11,11 @@ int main(void) {
   if (num <= 999){
     if (num >= 100){
       printf("El número tiene 3 cifras\n");
+    } else {
+      printf("El número no tiene 3 cifras\n");
     }
+  } else {
+      printf("El número no tiene 3 cifras\n");
   }
 
   return 0;
