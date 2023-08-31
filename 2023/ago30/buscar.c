@@ -1,5 +1,6 @@
 #include <stdio.h>
 #define TAM 10
+// code: 78ADmL
 /* Resolver: */
 /* 1. Ingresar TAM elementos en un arreglo de enteros */
 /* 2. Solicitar al usuario un número para buscar*/
