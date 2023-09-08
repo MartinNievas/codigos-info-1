@@ -2,7 +2,7 @@
 
 void incrementa_arreglo(int a[])
 {
-  a[0]++;
+  a[1]++;
   printf("%d\n", a[1]);
 }
 
@@ -12,6 +12,7 @@ int main(void) {
   printf("temp: %d\n", temp[0]);
   incrementa_arreglo(temp);
   printf("temp: %d\n", temp[0]);
+  printf("temp: %d\n", temp[1]);
 
   return 0;
 }

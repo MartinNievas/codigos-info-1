@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define TAM 10
+#define N 10
 
 void ingresar_elementos(int a[], int tam)
 {
@@ -11,15 +11,15 @@ void imprimir_arreglo(int a[], int tam)
   // Imprime todos los elementos
 }
 
+int busca_mayor(int a[], int tam);
+int busca_menor(int a[], int tam);
+void ordenar_menor_a_mayor_burbuja(int a[], int tam);
 
 int main(void) {
 
-  int arreglo[TAM];
-  ingresar_elementos(arreglo, TAM);
-  imprimir_arreglo(arreglo, TAM);
-  float promedio;
-  promedio = calcular_promedio(arreglo, TAM);
-  printf("El promedio es: %f\n", promedio);
+  int arreglo[N];
+  ingresar_elementos(arreglo, N);
+  imprimir_arreglo(arreglo, N);
 
   return 0;
 }
