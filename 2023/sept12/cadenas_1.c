@@ -3,7 +3,8 @@
 
 int main(void) {
 
-  char nombre[] = "Martin Nievas";
+  char nombre[] = "Hola, mundo!";
+  nombre[4] = '\0';
 
   printf("Hola %s!\n", nombre);
 

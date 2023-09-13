@@ -12,7 +12,7 @@ int main(void) {
     "Me vas a meter en problemas, chico.",
     "Hora del espectáculo, chamaco.",
   };
-  printf("%s\n", frases[3]);
+  printf("%s\n", frases[1]);
 
   return 0;
 }
