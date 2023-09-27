@@ -13,7 +13,7 @@ int main(void)
   parreglo = malloc(sizeof(int) * tamanio);
 
   for (int i = 0; i < tamanio; i++){
-    *(parreglo+i) = 1;
+    printf("%d\n", *(parreglo+i));
   }
 
   return 0;

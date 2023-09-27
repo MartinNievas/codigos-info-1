@@ -4,7 +4,11 @@
 /** Función para sumar arreglos
   * operación:  c = a + b
   *  */
-void sumar_arreglos(float arreglo_c[], float arreglo_a[], float arreglo_b[], const int tam)
+void sumar_arreglos(
+    float* arreglo_c,
+    float* arreglo_a,
+    float* arreglo_b,
+    const int tam)
 {
   for (int i = 0; i < tam; i++){
     arreglo_c[i] = arreglo_a[i] + arreglo_b[i];

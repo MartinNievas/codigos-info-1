@@ -6,7 +6,7 @@ int main(void) {
 
   int *pvar;
 
-  pvar = malloc(2);
+  pvar = malloc(-1);
 
   if (pvar == NULL){
     printf("Es null\n");

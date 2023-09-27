@@ -8,8 +8,10 @@ int main(void)
   int tam;
   int *parreglo;
 
-  printf("Ingrese el tamaño: ");
-  scanf("%d", &tam);
+  do{
+    printf("Ingrese el tamaño: ");
+    scanf("%d", &tam);
+  }while(tam <= 0);
 
   parreglo = malloc(tam * sizeof(int));
 
