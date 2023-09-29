@@ -7,11 +7,18 @@ int main(void)
 {
 
   int* parreglo;
-  unsigned long int tamanio;
+  int tamanio;
   printf("Ingrese el tamaño: ");
-  scanf("%lu", &tamanio);
-  parreglo = malloc((unsigned long int)sizeof(int) * tamanio);
+  scanf("%d", &tamanio);
+  parreglo = malloc(sizeof(int) * tamanio);
 
+  for (int i = 0; i < tamanio; i++){
+    *(parreglo+i) = i;
+  }
+
+  for (int i = 0; i < tamanio; i++){
+    printf("%d\n", parreglo[i]);
+  }
 
   scanf("%d", &parreglo[0]);
 
