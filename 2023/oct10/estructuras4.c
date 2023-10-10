@@ -9,16 +9,12 @@ struct punto_2D {
 int main(void)
 {
   struct punto_2D punto1 = {10.20, 0.3};
-  struct punto_2D punto2 = {33.2, 23.12};
+
+  punto1.x += 10;
+  punto1.y += 10;
 
   printf("Coordenadas del punto1: (%.3f,%.3f)\n", punto1.x, punto1.y);
-  printf("Coordenadas del punto2: (%.3f,%.3f)\n", punto2.x, punto2.y);
 
-  printf("Asigna\n");
-  punto1 = punto2;
-
-  printf("Coordenadas del punto1: (%.3f,%.3f)\n", punto1.x, punto1.y);
-  printf("Coordenadas del punto2: (%.3f,%.3f)\n", punto2.x, punto2.y);
 
   return 0;
 }

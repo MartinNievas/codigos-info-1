@@ -22,7 +22,8 @@ int main(void) {
   struct perrro bobi1 = {20, "Luke"};
   struct perrro bobi2 = {20, "Brownie"};
 
-  printf("%s\n", bobi1.nombre);
+  printf("bobi1: %d\n", bobi1.edad);
+  printf("bobi1: %s\n", bobi1.nombre);
   printf("%s\n", bobi2.nombre);
 
 

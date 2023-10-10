@@ -14,9 +14,9 @@ struct punto_3D {
 int main(void)
 {
   struct punto_2D punto1;
-  struct punto_3D punto2 = {33.2, 23.12, 5.44};
+  struct punto_3D punto2 = {33.2, 23.12};
 
-  //punto1 = punto2;
+  punto1 = punto2;
 
   return 0;
 }
