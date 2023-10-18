@@ -98,7 +98,7 @@ int main( int argc, char * argv[] )
     printf( "%s\n\n", strbuf.ptr );
     printf("%lu bytes retrieved\n", (unsigned long)strbuf.len);
     /* Limpiar el buffer de respuesta*/
-    *strbuf.ptr = " ";
+    string_buffer_finish( &strbuf );
 
 
     /*--------------------------------------------------------------------------------
