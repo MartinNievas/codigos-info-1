@@ -49,8 +49,8 @@ int main( int argc, char * argv[] )
   CURL * curl;
   CURLcode res;
   string_buffer_t strbuf;
-  char * myurl = argv[1]; // Esta URL viene de stdin
-  //"https://api.telegram.org/bot ......bot_token...../sendMessage?chat_id=....&text=Hola%20Luis";
+  char * myurl = "https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&current=temperature_2m";
+  char * myurl2 = "https://api.telegram.org/bot<token:bot>/sendMessage?chat_id=<chat_id>&text=Buenos_dias";
   string_buffer_initialize( &strbuf );
 
   /* Inicializar la sesión de curl */
@@ -64,21 +64,16 @@ int main( int argc, char * argv[] )
   }
 
   /* Especificar la URL a consultar */
-  curl_easy_setopt(curl, CURLOPT_URL, myurl );
+  curl_easy_setopt(curl, CURLOPT_URL, myurl2);
   curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L );
 
   /* Enviar la información de respuesta a la función */
   curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_callback );
 
-  /* Enviar la información de respuesta del encabezado a la función */
-  // curl_easy_setopt(curl, CURLOPT_HEADERFUNCTION, header_callback );
-
   /* Preparamos el callback para cuando la API responda */
   curl_easy_setopt(curl, CURLOPT_WRITEDATA, &strbuf );
   // curl_easy_setopt(curl, CURLOPT_HEADERDATA, &strbuf );
 
-  // curl_easy_setopt(curl, CURLOPT_VERBOSE, 1L);
-  // curl_easy_setopt(curl, CURLOPT_HEADER, 1L);
   /* get it! */
   res = curl_easy_perform(curl);
   /* check for errors */
@@ -96,7 +91,7 @@ int main( int argc, char * argv[] )
    * Tenemos que procesar estos datos. Completar desde acá
    *--------------------------------------------------------------------------------
    */
-  printf( "%s\n\n", strbuf.ptr );
+  printf("La respuesta es:\n%s\n\n", strbuf.ptr );
   printf("%lu bytes retrieved\n", (unsigned long)strbuf.len);
 
 
