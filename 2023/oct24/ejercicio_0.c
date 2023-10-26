@@ -13,33 +13,31 @@ typedef struct {
   unsigned int id;
   float peso;
   char categoria;
-
-  struct{
-    char origen[30];
-    char destino[30];
-  }description;
-
 } paquete_t;
 
 
-void cargar_paquetes(paquete_t*, int);
-void imprimir_paquetes(paquete_t*, int);
-void imprimir_paquetes_categoria_B(paquete_t*, int);
+void cargar_paquetes(paquete_t*, int );
+//void imprimir_paquetes(paquete_t*, int);
+//void imprimir_paquetes_categoria_B(paquete_t*, int);
 
 // En estas funciones utilizar aritmética de puntero
-void imprimir_paquetes_categoria_A(paquete_t*, int);
+void imprimir_paquetes_A(paquete_t*, int);
 // paquete[i]
 // *(paquetes+i)
 // (paquetes+i)->peso
-void copiar_paquetes(paquete_t*, paquete_t*);
+//void copiar_paquetes(paquete_t*, paquete_t*);
 
 int main(void) {
 
-  int cantidad = -1;
+  int cantidad = TAM + 1;
   paquete_t paquetes[TAM];
-  paquete_t paquetes_b[TAM];
+  //paquete_t paquetes_b[TAM];
 
   // Validar cantidad
+  while(cantidad < 0 || cantidad > TAM){
+    printf("Ingrese la cantidad: ");
+    scanf("%d", &cantidad);
+  }
 
   // Cargar paquetes
   cargar_paquetes(paquetes, cantidad);
@@ -48,13 +46,44 @@ int main(void) {
   imprimir_paquetes_A(paquetes, cantidad);
 
   // Imprimir paquetes en categoría B
-  imprimir_paquetes_B(paquetes, cantidad);
+  // imprimir_paquetes_B(paquetes, cantidad);
 
   // Copiar los paquetes de la categoría B al arreglo paquetes_b
-  copiar_paquetes(paquetes, paquetes_b);
+  // copiar_paquetes(paquetes, paquetes_b, cantidad);
 
   // Imprimir paquetes en el arreglo paquetes_b
   imprimir_paquetes(paquetes_b, cantidad);
 
   return 0;
+}
+
+void cargar_paquetes(paquete_t* arreglo, int cant){
+
+  for (int i = 0; i < cant ; i++ ){
+    printf("Ingrese el ID: ");
+    scanf("%u", &arreglo[i].id);
+    printf("Ingrese el peso: ");
+    scanf("%f", &(arreglo+i)->peso);
+
+    if( (arreglo+i)->peso >= 100){
+      arreglo[i].categoria = 'B';
+    } else {
+      arreglo[i].categoria = 'A';
+    }
+
+
+  }
+
+}
+
+// En estas funciones utilizar aritmética de puntero
+void imprimir_paquetes_A(paquete_t* arreglo, int cant){
+
+  for (int i = 0; i < cant; i++){
+    if ( (arreglo+i)->categoria == 'A'){
+      printf("El id es: %u\n", (arreglo+i)->id);
+      printf("El peso es: %f\n", (arreglo+i)->peso);
+    }
+  }
+
 }

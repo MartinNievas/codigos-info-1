@@ -19,16 +19,6 @@ union byte_u {
   char num;
 };
 
-// campo.b0 num 0
-// campo.b1 num 1
-// campo.b2 num 2
-// campo.b3 num 3
-// campo.b4 num 4
-// campo.b5 num 5
-// campo.b6 num 6
-// campo.b7 num 7
-//
-
 int main(void)
 {
 
