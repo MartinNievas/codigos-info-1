@@ -12,10 +12,16 @@ float calcular_promedio(int a[], int tam);
 int main(void) {
 
   int arreglo[N];
-  // 1. Solicitar al usuario ingresar N número en un arreglo utilizando la función ingresar_elementos
-  //  - Dentro de la función ingresar_elementos se debe llamar a la función ingreso_y_validación para
-  //    validar cada uno de los elementos asignados al arreglo
-  //  - Se deben ingresar los elementos en el rango válido de (-100,100)
+  // 1. Solicitar al usuario ingresar N
+  // número en un arreglo utilizando la 
+  // función ingresar_elementos
+  //  - Dentro de la función ingresar_elementos 
+  //  se debe llamar a la función ingreso_y_validación 
+  //  para
+  //    validar cada uno de los elementos asignados 
+  //    al arreglo
+  //  - Se deben ingresar los elementos en el rango 
+  //  válido de (-100,100)
   ingresar_elementos(arreglo, N);
 
   // 2. Imprimir los elementos uno debajo del otro
