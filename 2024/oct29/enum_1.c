@@ -16,7 +16,7 @@ int main(void) {
     "Domingo"
   };
 
-  for (dia = Lunes; dia <= Jueves; dia++){
+  for (dia = Lunes; dia <= Sabado; dia++){
     printf("El día es: %s\n", dias_letras[dia]);
   }
 

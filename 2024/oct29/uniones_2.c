@@ -9,9 +9,8 @@ int main(void) {
 
   union entero_y_chars conversor;
 
-  //|00000000|00000000|00000000|00000000|
-  conversor.letras[1] = 4;
-  //conversor.entero = 256;
+  //|00000000|00000000|00000000|00000010|
+  conversor.letras[1] = 1;
 
   printf("entero: %d\n", conversor.entero);
   printf("letras[0]: %d\n", conversor.letras[0]);

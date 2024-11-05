@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-enum semana{Lunes = 10, Martes=20,
+enum semana{Lunes=10, Martes=12,
   Miercoles, Jueves,
   Viernes, Sabado, Domingo};
 
@@ -8,7 +8,7 @@ int main(void) {
 
   enum semana dia;
 
-  dia = Lunes;
+  dia = Miercoles;
 
   printf("%d\n", dia);
 
