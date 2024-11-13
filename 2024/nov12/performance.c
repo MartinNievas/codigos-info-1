@@ -3,7 +3,7 @@
 #include <time.h>
 // OpenMP
 #include <omp.h>
-#define TAM 1<<10
+#define TAM 100000l
 
 // Tarea opcional mover todo esto a una biblioteca separada
 // Para compilar:
@@ -135,7 +135,7 @@ int main(void)
     printf("ordena qsort: %.23f\n", end-start);
   }
 
-  /** imprime_arreglo(arreglo,100); */
+  imprime_arreglo(arreglo,100);
 
   return 0;
 }

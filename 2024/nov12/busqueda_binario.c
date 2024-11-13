@@ -42,12 +42,12 @@ int main(void) {
   /** Búsqueda binaria */
   while (inferior <= superior){
     if (buscar < arreglo[medio]){
-      inferior = medio + 1;
+      superior = medio - 1;
     } else if (buscar == arreglo[medio]){
       printf("Elemento encontrado en la posición: %d\n", medio);
       break;
     } else{
-      superior = medio - 1;
+      inferior = medio + 1;
     }
     medio = (inferior + superior)/2;
   }

@@ -30,6 +30,8 @@ int main() {
     scanf("%f", &prod.precio);
 
     // Escribir la estructura en el archivo
+    fseek(cfPtr, prod.id * sizeof(struct producto), SEEK_SET);
+
     fwrite(&prod, sizeof(struct producto), 1, cfPtr);
   }
 
@@ -39,3 +41,4 @@ int main() {
 
   return 0;
 }
+
