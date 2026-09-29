@@ -3,7 +3,7 @@
 void imprimir(int *a, int tam)
 {
   for(int i = 0; i < tam ; i+=1){
-    printf("%d ", *(a+i));
+    printf("%d\t", *(a + i));
   }
 }
 

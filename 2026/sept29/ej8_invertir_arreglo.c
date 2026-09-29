@@ -1,15 +1,18 @@
 #include <stdio.h>
 #define TAM 5
 
+
+//stickers para ana y maku
 void invertir_arreglo(int *a, int tam)
 {
-  /* Antes:
-  1 2 3 4 5
+  for (int i = 0; i < tam/2; i++){
+    int guardada = *(a+i);
+    *(a+i) = *(a+tam-1-i);
+    *(a+tam-1-i) = guardada;
+  }
 
-  Después:
-  5 4 3 2 1
-  */
 }
+
 
 int main(void) {
 

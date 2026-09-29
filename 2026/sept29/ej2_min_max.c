@@ -10,13 +10,13 @@
 
 void min_max(int a, int b, int *minimo, int *maximo)
 {
-    if(a > b){
-      *maximo = a;
-      *minimo = b;
-    } else {
-      *maximo = b;
-      *minimo = a;
-    }
+  *minimo = a > b ? b : a;
+  *maximo = a > b ? a : b;
+}
+
+void min_max(int a, int b, int *minimo, int *maximo){
+  a>b ? *maximo=a : *maximo=b;
+  b<a ? *minimo=b : *minimo=a;
 }
 
 int main(void)

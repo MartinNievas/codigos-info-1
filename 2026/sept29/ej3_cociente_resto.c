@@ -8,10 +8,11 @@
 
 #include <stdio.h>
 
-void dividir(int dividendo, int divisor, int *cociente, int *resto)
+void dividir(int dividendo, int divisor,
+    int *cociente, int *resto)
 {
-    *cociente = dividendo / divisor;
-    *resto = dividendo % divisor;
+  *cociente = dividendo / divisor;
+  *resto = dividendo % divisor;
 }
 
 int main(void)

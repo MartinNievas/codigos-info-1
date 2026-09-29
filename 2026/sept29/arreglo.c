@@ -10,13 +10,8 @@ int main(void) {
 
   printf("Elementos\n");
   for (int i = 0; i < 5; i++){
-    printf("%d: %x\n", arr[i], &arr[i]);
+    printf("%d: %x\n", arr[i], *(arr + i));
   }
-
-  printf("Contenido primer\n");
-  printf("%d\n", arr[1]);
-  printf("%d\n", *(arr+1));
-
 
 
 
