@@ -4,7 +4,6 @@
 // * El valor mínimo.
 // * La posición donde se encuentra cada uno.
 
-```c
 #include <stdio.h>
 #include <stdlib.h>
 

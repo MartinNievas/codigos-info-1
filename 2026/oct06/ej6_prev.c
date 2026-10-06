@@ -5,7 +5,11 @@
 // función para calcular la sumatoria
 int sumatoria(int *v, int n){
 
-  // Completar
+  int sum = 0;
+
+  for (int i = 0; i < n; i++){
+    sum += *(v + i);
+  }
 
   return sum;
 }
