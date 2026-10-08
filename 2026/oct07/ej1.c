@@ -1,6 +1,3 @@
-//codeshare.io/info1R1
-//
-//
 //Solicitar al usuario la cantidad `n` de números enteros que desea almacenar.
 //Crear dinámicamente un vector de `n` enteros, solicitar los valores al usuario y luego mostrarlos.
 //Finalmente, liberar la memoria utilizada.
