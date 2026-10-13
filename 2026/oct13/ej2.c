@@ -26,9 +26,7 @@ int doble(int n)
 }
 
 // Procesa un vector utilizando una funcion recibida
-void procesarVector(
-    int vector[],
-    int cantidad,
+void procesarVector( int vector[], int cantidad,
     int (*operacion)(int)
 )
 {

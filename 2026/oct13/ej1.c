@@ -10,32 +10,36 @@
 // El usuario debe ingresar dos números y seleccionar una operación mediante un menú.
 // El programa debe utilizar un puntero a función para ejecutar la operación seleccionada
 
-// Funcion que devuelve la suma de dos enteros
-int sumar(int a, int b)
+float cociente(int a, int b)
 {
-    // COMPLETAR: devolver la suma
+    return (float)a/b;
 }
 
-// Funcion que devuelve la resta de dos enteros
-int restar(int a, int b)
+float sumar(int a, int b)
 {
-    // COMPLETAR: devolver la resta
+    return a + b;
 }
 
-// Funcion que devuelve el producto de dos enteros
-int multiplicar(int a, int b)
+float restar(int a, int b)
 {
-    // COMPLETAR: devolver el producto
+    return a - b;
+}
+
+
+float multiplicar(int a, int b)
+{
+    return a * b;
 }
 
 int main(void)
 {
     int a, b;
     int opcion;
-    int resultado;
+    float resultado;
 
     // COMPLETAR: declarar un puntero a funcion
-    // compatible con las tres operaciones
+    // compatible con las cuatro operaciones
+    float (*puntero)(int, int);
 
 
     printf("Ingrese dos numeros enteros: ");
@@ -45,20 +49,35 @@ int main(void)
     printf("1. Sumar\n");
     printf("2. Restar\n");
     printf("3. Multiplicar\n");
+    printf("4. Cociente\n");
     printf("Opcion: ");
     scanf("%d", &opcion);
 
-    // COMPLETAR:
-    // 1. Seleccionar la funcion correspondiente.
-    // 2. Asignarla al puntero.
-    // 3. Validar la opcion ingresada.
+    switch(opcion){
+    case 1:
+      puntero = sumar;
+    break;
+    case 2:
+      puntero = restar;
+    break;
+    case 3:
+      puntero = multiplicar;
+    break;
+    case 4:
+      puntero = cociente;
+      if (b == 0){
+        printf("No se puede dividir por cero\n");
+        return -1;
+      }
+    break;
+    default:
+      printf("Opción no válida\n");
+      return -1;
+    }
 
+    resultado = puntero(a, b);
 
-    // COMPLETAR: ejecutar la funcion mediante
-    // el puntero y guardar el resultado.
-
-
-    printf("Resultado: %d\n", resultado);
+    printf("Resultado: %f\n", resultado);
 
     return 0;
 }

@@ -33,12 +33,13 @@ float calcularPromedio(float *vector, int cantidad)
     float suma = 0;
     int i;
 
-    // COMPLETAR:
-    // Recorrer el vector y acumular sus elementos.
+    for (i = 0; i < cantidad; i++)
+      suma += vector[i];
 
+    suma /= cantidad;
 
-    // COMPLETAR:
-    // Devolver el promedio.
+    return suma;
+
 }
 
 // Calcula el maximo del vector
@@ -47,12 +48,14 @@ float calcularMaximo(float *vector, int cantidad)
     float maximo;
     int i;
 
-    // COMPLETAR:
-    // Inicializar maximo y recorrer el vector.
+    maximo = vector[0];
 
+    for (i = 0; i < cantidad; i++){
+      if(vector[i] > maximo)
+        maximo = vector[i];
+    }
 
-    // COMPLETAR:
-    // Devolver el maximo.
+    return maximo;
 }
 
 // Calcula el minimo del vector
@@ -61,12 +64,15 @@ float calcularMinimo(float *vector, int cantidad)
     float minimo;
     int i;
 
-    // COMPLETAR:
-    // Inicializar minimo y recorrer el vector.
+    minimo = vector[0];
 
+    for (i = 0; i < cantidad; i++){
+      if(vector[i] < minimo)
+        minimo = vector[i];
+    }
 
-    // COMPLETAR:
-    // Devolver el minimo.
+    return minimo;
+
 }
 
 // Ejecuta una funcion estadistica y muestra el resultado
@@ -79,31 +85,32 @@ void mostrarResultado(
 {
     float resultado;
 
-    // COMPLETAR:
     // Ejecutar la funcion recibida y guardar
     // el resultado.
-
-
-    // COMPLETAR:
+    resultado = operacion(vector, cantidad);
     // Mostrar la descripcion y el resultado.
+    printf("%s: %f\n", descripcion, resultado);
 }
 
 int main(void)
 {
     float vector[MAX];
     int cantidad;
-    int i;
-
-    printf("Cantidad de elementos: ");
-    scanf("%d", &cantidad);
 
     // COMPLETAR:
     // Validar que la cantidad sea mayor que cero
     // y no supere MAX.
-
+    do{
+      printf("Cantidad de elementos: ");
+      scanf("%d", &cantidad);
+    }while(cantidad < 0 || cantidad > MAX);
 
     // COMPLETAR:
     // Solicitar y cargar los elementos del vector.
+    for (int i = 0; i < cantidad; i++){
+      printf("Ingrese el número: ");
+      scanf("%f", &vector[i]);
+    }
 
 
     // Ejecutar cada operacion estadistica
