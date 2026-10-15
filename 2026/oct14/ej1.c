@@ -12,23 +12,25 @@
 
 float cociente(int a, int b)
 {
-  // Completar
+  float c;
+  c = a / (float)b;
+  return c;
 }
 
 float sumar(int a, int b)
 {
-  // Completar
+  return a + b;
 }
 
 float restar(int a, int b)
 {
-  // Completar
+  return a - b;
 }
 
 
 float multiplicar(int a, int b)
 {
-  // Completar
+  return a * b;
 }
 
 int main(void)
@@ -39,21 +41,27 @@ int main(void)
 
   // COMPLETAR: declarar un puntero a funcion
   // compatible con las cuatro operaciones
+  float (*puntero[5])(int, int) = {NULL,
+    sumar,restar,multiplicar, cociente};
 
   printf("Ingrese dos numeros enteros: ");
   scanf("%d %d", &a, &b);
 
-  printf("\nSeleccione una operacion:\n");
-  printf("1. Sumar\n");
-  printf("2. Restar\n");
-  printf("3. Multiplicar\n");
-  printf("4. Cociente\n");
-  printf("Opcion: ");
-  scanf("%d", &opcion);
+  do{
+    printf("\nSeleccione una operacion:\n");
+    printf("1. Sumar\n");
+    printf("2. Restar\n");
+    printf("3. Multiplicar\n");
+    printf("4. Cociente\n");
+    printf("Opcion: ");
+    scanf("%d", &opcion);
+    if(opcion < 1 || opcion > 4)
+      printf("Error. Opciones del 1 al 4\n");
+  }while(opcion < 1 || opcion > 4);
 
   // Completar
   // Asignar puntero a función correspondiente
-
+  resultado = puntero[opcion](a,b);
 
   // Completar
   // Utilizar el puntero para obtener el resultado de la función

@@ -39,15 +39,12 @@ int main(void)
         case 1:
             operacion = sumar;
             break;
-
         case 2:
             operacion = restar;
             break;
-
         case 3:
             operacion = multiplicar;
             break;
-
         default:
             printf("Opcion invalida\n");
             return 1;
