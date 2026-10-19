@@ -35,6 +35,7 @@ int main(void)
 
   // COMPLETAR: declarar un puntero a funcion
   // compatible con las cuatro operaciones
+
   printf("Ingrese dos numeros enteros: ");
   scanf("%d %d", &a, &b);
 

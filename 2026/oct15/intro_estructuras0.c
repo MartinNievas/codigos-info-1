@@ -6,19 +6,18 @@ struct Alumno {
     char nombre[50];
     float promedio;
 };
+typedef struct Alumno alumno_t;
 
 
 int main() {
 
     // 2. Declaracion de una variable de tipo struct Alumno
-    int numero;
-    scanf("%d", &numero);
-    struct Alumno alumno1;
+    alumno_t alumno1;
 
     // 3. Asignacion de valores a sus miembros
-    scanf("%d", &alumno1.legajo);
-
     alumno1.promedio = 8.5;
+    scanf("%f", &alumno1.promedio);
+
     printf("Ingrese el nombre: ");
     scanf("%s", alumno1.nombre);
 

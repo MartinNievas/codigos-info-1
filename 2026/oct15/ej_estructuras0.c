@@ -32,15 +32,24 @@
 // Altura: 1.78
 // DNI: 30123456
 
-typedef struct{
-  // Completar
+typedef struct {
+  char nombre[100];
+  unsigned int edad;
+  float altura;
+  unsigned int dni;
 }persona_t;
 
 
 int main(void) {
 
   persona_t persona;
-  // Completar
+  printf("Ingrese el nombre: ");
+  scanf("%s", persona.nombre);
+  printf("Ingrese el edad: ");
+  scanf("%u", &persona.edad);
 
+
+  printf("Nombre: %s\n", persona.nombre);
+  printf("edad: %u\n", persona.edad);
   return 0;
 }

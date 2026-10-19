@@ -1,15 +1,23 @@
 #include <stdio.h>
 
-int sumar(int a, int b){
+int suma(int a, int b){
   return a + b;
 }
 
 int main(void) {
-  int (*pf)(int, int);
+  int arr[10];
+  int* parr;
+  parr = arr;
+  printf("Arreglo: %d\n", *parr);
+  printf("Arreglo: %d\n", parr[0]);
 
-  pf = sumar;
+  int (*pfun)(int, int);
+  pfun = suma;
 
-  printf("%d\n", sumar(1,2));
-  printf("%d\n", pf(1,2));
+  printf("%d\n", suma(10,1));
+  printf("%d\n", pfun(10,1));
+  printf("%d\n", (*pfun)(10,1));
+
+
   return 0;
 }

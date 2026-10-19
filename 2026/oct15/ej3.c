@@ -30,16 +30,39 @@
 // Calcula el promedio de los elementos
 float calcularPromedio(float *vector, int cantidad)
 {
+  float suma = 0;
+
+  for (int i = 0; i < cantidad; i++){
+    suma += vector[i];
+  }
+
+  return suma / cantidad;
 }
 
 // Calcula el maximo del vector
 float calcularMaximo(float *vector, int cantidad)
 {
+  float max = vector[0];
+
+  for (int i = 0; i < cantidad; i++){
+    if(vector[i] > max)
+      max = vector[i];
+  }
+
+  return max;
 }
 
 // Calcula el minimo del vector
 float calcularMinimo(float *vector, int cantidad)
 {
+  float min = vector[0];
+
+  for (int i = 0; i < cantidad; i++){
+    if(vector[i] < min)
+      min = vector[i];
+  }
+
+  return min;
 }
 
 // Ejecuta una funcion estadistica y muestra el resultado
@@ -54,6 +77,7 @@ void mostrarResultado(
 
     // Completar: Ejecutar la funcion recibida y guardar
     // el resultado.
+    resultado = operacion(vector, cantidad);
 
     // Mostrar la descripcion y el resultado.
     printf("%s: %f\n", descripcion, resultado);
@@ -68,10 +92,17 @@ int main(void)
     // COMPLETAR:
     // Validar que la cantidad sea mayor que cero
     // y no supere MAX.
+    do{
+      printf("Ingrese la cantindad de elementos:");
+      scanf("%d", &cantidad);
+    }while(cantidad < 0 || cantidad > MAX);
 
     // COMPLETAR:
     // Solicitar y cargar los elementos del vector.
-
+    for (int i = 0; i < cantidad; i++){
+      printf("ingrese el elemento: ");
+      scanf("%f", &vector[i]);
+    }
 
     // Ejecutar cada operacion estadistica
     mostrarResultado(
