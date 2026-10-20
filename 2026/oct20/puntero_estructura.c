@@ -27,7 +27,7 @@ int main(void) {
   scanf("%f", &puntero->y);
 
   printf("Coordenadas\n");
-  printf("x:%f\ny:%f\n", pa.x, pa.y);
+  printf("x:%f\ny:%f\n", puntero->x, puntero->y);
 
   return 0;
 }

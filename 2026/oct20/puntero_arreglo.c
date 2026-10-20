@@ -9,13 +9,13 @@ int main(void) {
 
   punto2D_t puntos[3];
   punto2D_t *puntero;
-
   puntero = puntos;
 
   for (int i = 0; i < 3; i++){
     printf("Punto[%d]\n", i);
     printf("Ingrese la coordenada x: ");
     scanf("%f", &(puntero+i)->x);
+    scanf("%f", &puntos[i].x);
     printf("Ingrese la coordenada y: ");
     scanf("%f", &(puntero+i)->y);
   }
