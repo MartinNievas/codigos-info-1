@@ -64,26 +64,12 @@ typedef struct {
  */
 int ingresarTamValidado(int min, int max) {
 
-  int tam;
+  // Solicitar la cantidad de alumnos
 
-  do{
-    // Solicitar la cantidad de alumnos
-    printf("Ingrese el número: ");
-    scanf("%d", &tam);
-    // Validar que la cantidad se encuentre entre min y max
-  }while(tam < min || tam > max);
+  // Validar que la cantidad se encuentre entre min y max
+
   // Retornar la cantidad validada
-  return tam;
 
-}
-
-int cargarNota(void){
-  int nota;
-  do { 
-    printf("Ingrese nota: ");
-    scanf("%d", &nota);
-  }while(nota < 0 || nota > 10);
-  return nota;
 }
 
 /*
@@ -106,17 +92,14 @@ int cargarNota(void){
 void cargarAlumnos(alumno_t *arr, int cant) {
 
   // Recorrer el arreglo y solicitar los datos de cada alumno
-  for(int i = 0; i < cant ; i += 1){
-    // Cargar el legajo
-    printf("Legajo: ");
-    //scanf("%d", &(*(arr + i)).legajo );
-    scanf("%d", &(arr + i)->legajo );
 
-    // Solicitar y validar la primera nota
-    (arr+i)->nota1 = cargarNota();
-    (arr+i)->nota2 = cargarNota();
-    (arr+i)->nota3 = cargarNota();
-  }
+  // Cargar el legajo
+
+  // Solicitar y validar la primera nota
+
+  // Solicitar y validar la segunda nota
+
+  // Solicitar y validar la tercera nota
 
 }
 
@@ -142,20 +125,12 @@ void cargarAlumnos(alumno_t *arr, int cant) {
 void calcularPromedios(alumno_t *arr, int cant) {
 
   // Recorrer el arreglo de alumnos
-  for (int i = 0; i < cant; i++){
-    // Calcular el promedio de cada alumno
-    (arr + i)-> promedio = ((arr+i)->nota1 + (arr+i)->nota2 + (arr+i)->nota3)/3.0;
 
-    // Determinar el estado académico según el promedio
-    // Almacenar el promedio y el estado en la estructura
-    if((arr+i)->promedio >= 8){
-      (arr+i)->estado = 'P';
-    } else if ((arr+i)->promedio >= 6){
-      (arr+i)->estado = 'R';
-    } else {
-      (arr+i)->estado = 'A';
-    }
-  }
+  // Calcular el promedio de cada alumno
+
+  // Determinar el estado académico según el promedio
+
+  // Almacenar el promedio y el estado en la estructura
 
 }
 
@@ -182,15 +157,6 @@ void calcularPromedios(alumno_t *arr, int cant) {
 void imprimirPromocionados(alumno_t *arr, int cant) {
 
   // Recorrer el arreglo de alumnos
-  for (int i = 0; i < cant; i++){
-    if ( (arr+i)->estado  == 'P'){
-      printf("Legajo: %d", (arr+i)->legajo);
-      printf("Nota1: %d", (arr+i)->nota1);
-      printf("Nota2: %d", (arr+i)->nota2);
-      printf("Nota2: %d", (arr+i)->nota3);
-      printf("Promedio: %f", (arr+i)->promedio);
-    }
-  }
 
   // Verificar si el estado académico es 'P'
 
@@ -213,12 +179,9 @@ int main(void) {
   tam = ingresarTamValidado(0, TAM);
 
   // Reservar memoria dinámica para almacenar los alumnos
-  alumnos = malloc(tam * sizeof(alumno_t));
+  alumnos = malloc(/* Completar */);
+
   // Verificar si la reserva de memoria fue exitosa
-  if(alumno == NULL){
-    printf("ERROR\n");
-    return -1;
-  }
 
   // Cargar el legajo y las notas de los alumnos
   cargarAlumnos(alumnos, tam);
@@ -230,7 +193,6 @@ int main(void) {
   imprimirPromocionados(alumnos, tam);
 
   // Liberar la memoria reservada dinámicamente
-  free(alumnos);
 
   return 0;
 }
