@@ -17,7 +17,7 @@ int main(void) {
   printf("Ingrese la coordenada x: ");
   scanf("%f", &pa.y);
 
-  printf("Coordenadas\n");
+7 printf("Coordenadas\n");
   printf("x:%f\ny:%f\n", pa.x, pa.y);
 
   // Con punteros
