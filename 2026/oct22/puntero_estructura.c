@@ -23,11 +23,19 @@ int main(void) {
   // Con punteros
   printf("Ingrese la coordenada x: ");
   scanf("%f", &puntero->x);
+  scanf("%f", &(*puntero).x);
   printf("Ingrese la coordenada x: ");
   scanf("%f", &puntero->y);
 
   printf("Coordenadas\n");
   printf("x:%f\ny:%f\n", puntero->x, puntero->y);
+
+  int num;
+  int *pnum;
+
+  pnum = &num;
+
+  *pnum = 10;
 
   return 0;
 }
