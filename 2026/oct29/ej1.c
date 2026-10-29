@@ -25,6 +25,7 @@
 #include <stdio.h>
 
 // Definir la enumeracion estadoDispositivo_t
+typedef enum{ ENCENDIDO, APAGADO, ESPERA }estadoDispositivo_t;
 
 
 // Prototipos de funciones
@@ -37,22 +38,30 @@ int main() {
     int opcion;
     estadoDispositivo_t estado;
 
-    // Mostrar el menu
 
-
-    // Leer la opcion seleccionada
-
-
-    // Validar la opcion
-
+    do{
+      // Mostrar el menu
+      printf("0. ENCENDIDO\n");
+      printf("1. APAGADO\n");
+      printf("2. ESPERA\n");
+      printf("Ingrese op: ");
+      // Leer la opcion seleccionada
+      scanf("%d", &opcion);
+    }while(opcion != ENCENDIDO && opcion != APAGADO && opcion != ESPERA);
 
     // Asignar el estado correspondiente
+    estado = opcion;
 
 
     // Mostrar el estado
+    mostrarEstado(estado);
 
 
     // Informar si consume energia
+    if(consumeEnergia(estado))
+      printf("Consume enegergía\n");
+    else
+      printf("NO consume enegergía\n");
 
 
     return 0;
@@ -63,6 +72,17 @@ int main() {
 void mostrarEstado(estadoDispositivo_t estado) {
 
     // Completar la funcion
+    switch(estado){
+    case ENCENDIDO:
+      printf("Eqipo encendido\n");
+    break;
+    case APAGADO:
+      printf("Eqipo apagado\n");
+    break;
+    case ESPERA:
+      printf("Eqipo en espara\n");
+    break;
+    }
 
 }
 
@@ -70,6 +90,9 @@ void mostrarEstado(estadoDispositivo_t estado) {
 // Devuelve 1 si consume energia y 0 en caso contrario
 int consumeEnergia(estadoDispositivo_t estado) {
 
-    // Completar la funcion
+    if(estado == ENCENDIDO || estado == ESPERA)
+      return 1;
+    else
+      return 0;
 
 }

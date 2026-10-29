@@ -13,8 +13,10 @@ int main() {
     dato_t dato;
 
     // Guardar un numero entero
-    dato.entero = 25;
+    dato.entero = 64;
     printf("Entero: %d\n", dato.entero);
+    printf("Caracter: %c\n", dato.caracter);
+    printf("Real: %.2f\n--------------\n", dato.real);
 
     // Guardar un numero real
     dato.real = 3.14;

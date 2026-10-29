@@ -20,13 +20,36 @@
 // - Utilizar switch para mostrar el nombre del estado.
 
 // Definir la enumeracion estadoSemaforo_t
-
+typedef enum{
+  ROJO,
+  AMARILLO,
+  VERDE
+}estadoSemaforo_t;
 
 // Definir la estructura semaforo_t
+typedef struct{
+  int id;
+  estadoSemaforo_t estado_sem;
+}semaforo_t;
+
 
 
 // Prototipos de funciones
-void cargarSemaforo(/* completar */);
+void cargarSemaforo(semaforo_t *sem){
+  printf("Ingrese id:\n");
+  scanf("%d", &sem->id);
+
+  do{
+    printf("Ingrese color:");
+    printf("0. ROJO\n");
+    printf("1. AMARILLO\n");
+    printf("2. VERDE\n");
+    int temp;
+    scanf("%d", &temp);
+    sem->estado_sem = temp;
+  }while(temp < 0 || temp > 2);
+
+}
 
 void mostrarSemaforo(/* completar */);
 
@@ -35,9 +58,11 @@ int puedeAvanzar(/* completar */);
 
 int main() {
     // Declarar una variable de tipo semaforo_t
+    semaforo_t semaforo;
 
 
     // Cargar los datos
+    cargarSemaforo(&semáforo);
 
 
     // Mostrar la informacion

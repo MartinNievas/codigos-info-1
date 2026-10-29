@@ -4,7 +4,7 @@
 typedef enum {
     LUNES = 1,
     MARTES,
-    MIERCOLES,
+    MIERCOLES=20,
     JUEVES,
     VIERNES,
     SABADO,
