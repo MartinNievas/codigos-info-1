@@ -72,6 +72,13 @@ typedef struct veh{
  * Retorna la cantidad validada.
  */
 int ingresarTamValidado(int min, int max) {
+
+  int num;
+  do{
+    printf("Ingrese tam: ");
+    scanf("%d", &num);
+  }while(num < min || num > max);
+  return num;
 }
 
 /*
@@ -95,6 +102,24 @@ void cargarVehiculos(vehiculo_t *arr, int cant) {
   // Solicitar y validar la patente
   // Solicitar y validar las horas estacionado
   // Solicitar y validar el tipo de vehículo
+  for(int i = 0; i < cant ; i+=1){
+
+    int horas;
+    do{
+      printf("Cargar horas: ");
+      scanf("%d", &horas);
+    }while(horas < 1 || horas > 24);
+    (arr+i)->horas = horas;
+
+    char tipo;
+    do{
+      printf("Ingrese tipo: ");
+      scanf("%c", &tipo);
+    }while(tipo != 'A' && tipo != 'M' && tipo != 'C');
+    (arr+i)->tipo = tipo;
+
+
+  }
 
 }
 
@@ -121,6 +146,35 @@ void calcularImportes(vehiculo_t *arr, int cant) {
   // Calcular el importe total
   // Determinar el estado de pago
   // Almacenar el importe y el estado
+  for(int i = 0; i < cant ; ++i){
+    int costo;
+
+    switch((arr+i)->tipo){
+      case 'A':
+        costo = 2000;
+      break;
+      case 'M':
+        costo = 1000;
+      break;
+      case 'C':
+        costo = 3000;
+      break;
+
+    }
+    (arr+i)->importe = costo * (arr+i)->horas ;
+
+    char estado;
+    if((arr+i)->importe > 30000)
+      estado = 'P';
+    else if((arr+i)->importe >= 10000)
+      estado = 'N';
+    else
+      estado = 'B';
+
+    (arr+i)->estado = estado;
+
+
+  }
 
 }
 
@@ -138,6 +192,16 @@ void calcularImportes(vehiculo_t *arr, int cant) {
  *   (base + indice)->miembro
  */
 void imprimirPagosAltos(vehiculo_t *arr, int cant) {
+  for(int i = 0; i < cant; i++){
+
+    if((arr+i)->estado == 'P'){
+      printf("Patente: %d\n", (arr+i)->patente);
+
+
+    }
+
+
+  }
 
 }
 
@@ -151,9 +215,11 @@ int main(void) {
   tam = ingresarTamValidado(0, TAM);
 
   // Reservar memoria dinámica
-  vehiculos = malloc(/*Completar*/);
+  vehiculos = malloc(tam * sizeof(vehiculo_t));
 
   // Verificar si malloc() fue exitoso
+  if(vehiculos == NULL)
+    return -1;
 
   // Cargar los vehículos
   cargarVehiculos(vehiculos, tam);
