@@ -57,7 +57,7 @@ Utilizar:
 No utilizar punteros a estructuras.
 */
 
-typedef struct {
+typedef struct veh{
   int patente;
   int horas;
   char tipo;
@@ -72,13 +72,13 @@ typedef struct {
  * Retorna la cantidad validada.
  */
 int ingresarTamValidado(int min, int max) {
+  int num;
+  do{
+    printf("Ingrese num: ");
+    scanf("%d", &num);
+  }while(num < min || num > max);
 
-  // Solicitar la cantidad de vehículos
-
-  // Validar que se encuentre entre min y max
-
-  // Retornar la cantidad validada
-
+  return num;
 }
 
 /*
@@ -99,12 +99,34 @@ int ingresarTamValidado(int min, int max) {
 void cargarVehiculos(vehiculo_t *arr, int cant) {
 
   // Recorrer el arreglo
-
   // Solicitar y validar la patente
-
   // Solicitar y validar las horas estacionado
-
   // Solicitar y validar el tipo de vehículo
+  for(int i = 0; i < cant; i+=1){
+    int pat;
+
+    do{
+      printf("Ingrese patente: ");
+      scanf("%d", &pat);
+    }while(pat < 1000 || pat> 9999 );
+    (arr+i)->patente = pat;
+
+    int horas;
+    do{
+      printf("Ingrese horas: ");
+      scanf("%d", &horas);
+    }while(horas < 1 || horas > 24);
+    (arr+i)->horas = horas;
+
+    char tipo;
+    do{
+      printf("Ingrese tipo: ");
+      scanf(" %c", &tipo);
+    }while(tipo != 'A' && tipo != 'C' && tipo != 'M');
+    arr[i].tipo = tipo;
+    (*(arr+i)).tipo = tipo;
+
+  }
 
 }
 
@@ -127,14 +149,27 @@ void cargarVehiculos(vehiculo_t *arr, int cant) {
 void calcularImportes(vehiculo_t *arr, int cant) {
 
   // Recorrer el arreglo de vehículos
-
   // Determinar el costo por hora según el tipo
-
   // Calcular el importe total
-
   // Determinar el estado de pago
-
   // Almacenar el importe y el estado
+  for(int i = 0; i < cant; i++){
+
+    if((arr+i)->tipo == 'A')
+      (arr+i)->importe = 2000 * (arr+i)->horas;
+    else if((arr+i)->tipo == 'M')
+      (arr+i)->importe = 1000 * (arr+i)->horas;
+    else
+      (arr+i)->importe = 3000 * (arr+i)->horas;
+
+    if((arr+i)->importe >= 30000)
+      (arr+i)->estado = 'P';
+    else if ((arr+i)->importe >= 10000)
+      (arr+i)->estado = 'N';
+    else
+      (arr+i)->estado = 'B';
+
+  }
 
 }
 
@@ -153,26 +188,60 @@ void calcularImportes(vehiculo_t *arr, int cant) {
  */
 void imprimirPagosAltos(vehiculo_t *arr, int cant) {
 
-  // Recorrer el arreglo
-
-  // Verificar si el estado de pago es P
-
-  // Mostrar los datos del vehículo
-
+  for (int i = 0; i < cant; ++i){
+    if((arr+i)->estado == 'P'){
+      printf("Patente: %d", (arr+i)->patente);
+      printf("Horas: %d", (arr+i)->horas);
+      printf("Tipo: %c", (arr+i)->tipo);
+      printf("Importe: %f", (arr+i)->importe);
+    }
+  }
 }
+
+/*
+ * Imprime únicamente los vehículos cuyo estado de pago sea P.
+ *
+ * Mostrar:
+ *   - Patente.
+ *   - Horas estacionado.
+ *   - Tipo de vehículo.
+ *   - Importe a pagar.
+ *   - Estado de pago.
+ *
+ * Utilizar:
+ *   (base + indice)->miembro
+ */
+
+/*
+ * Imprime únicamente los vehículos cuyo estado de pago sea P.
+ *
+ * Mostrar:
+ *   - Patente.
+ *   - Horas estacionado.
+ *   - Tipo de vehículo.
+ *   - Importe a pagar.
+ *   - Estado de pago.
+ *
+ * Utilizar:
+ *   (base + indice)->miembro
+ */
 
 int main(void) {
 
   vehiculo_t *vehiculos;
+
   int tam;
 
   // Solicitar la cantidad de vehículos
   tam = ingresarTamValidado(0, TAM);
 
   // Reservar memoria dinámica
-  vehiculos = malloc(/* Completar */);
+  vehiculos = malloc( tam * sizeof(vehiculo_t));
 
   // Verificar si malloc() fue exitoso
+  if(vehiculos == NULL){
+    return -1;
+  }
 
   // Cargar los vehículos
   cargarVehiculos(vehiculos, tam);
@@ -184,6 +253,7 @@ int main(void) {
   imprimirPagosAltos(vehiculos, tam);
 
   // Liberar la memoria dinámica
+  free(vehiculos);
 
   return 0;
 }
