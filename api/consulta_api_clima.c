@@ -49,8 +49,7 @@ int main( int argc, char * argv[] )
   CURL * curl;
   CURLcode res;
   string_buffer_t strbuf;
-  char * myurl = "https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&current=temperature_2m";
-  char * myurl2 = "https://api.telegram.org/bot<token:bot>/sendMessage?chat_id=<chat_id>&text=Buenos_dias";
+  char * myurl = "https://wttr.in/Cordoba,Argentina?format=4";
   string_buffer_initialize( &strbuf );
 
   /* Inicializar la sesión de curl */
@@ -64,7 +63,7 @@ int main( int argc, char * argv[] )
   }
 
   /* Especificar la URL a consultar */
-  curl_easy_setopt(curl, CURLOPT_URL, myurl2);
+  curl_easy_setopt(curl, CURLOPT_URL, myurl);
   curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L );
 
   /* Enviar la información de respuesta a la función */

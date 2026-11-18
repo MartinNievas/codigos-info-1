@@ -140,11 +140,15 @@ int main( int argc, char * argv[] )
   char mensaje_enviar[1000] = {0};
   strcat(mensaje_enviar, url_api2);
   strcat(mensaje_enviar, frase_cadena);
+  for(int i = 0; mensaje_enviar[i] != 0 ; i++)
+    if (mensaje_enviar[i] == ' ')
+      mensaje_enviar[i] = '_';
 
   // Acá empieza el mensaje para la API de telegram
   curl_easy_setopt(curl_api2, CURLOPT_URL, mensaje_enviar );
   curl_easy_setopt(curl_api2, CURLOPT_WRITEDATA, &strbuf2 );
   curl_easy_setopt(curl_api2, CURLOPT_WRITEFUNCTION, write_callback );
+  printf("Mensaje a enviar: %s", mensaje_enviar);
 
   res = curl_easy_perform(curl_api2);
   /* check for errors */

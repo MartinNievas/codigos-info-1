@@ -11,9 +11,10 @@ sudo apt-get install libcurl4-openssl-dev
 gcc httpget.c -lcurl -o httpget
 ```
 
-## Probar Telegram:
+## Probar consulta clima:
 ```bash
-$./httpget "https://api.telegram.org/bot<bot_token>/sendMessage?chat_id=<chat_ID>&text=Hola Mundo "
+gcc consulta_api_clima.c -lcurl -o httpget
+$./a.out
 ```
 
 ## Probar gatos:
