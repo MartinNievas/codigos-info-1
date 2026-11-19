@@ -23,9 +23,9 @@ int main(void) {
 
       // Leemos el archivo como si el usuario ingresara los datos
       fscanf(cfPtr, "%s\t%s\t%d", nombre, apellido, &id);
-
       // Imprimimos los datos
       printf("%s %s %d\n", nombre, apellido, id);
+
     }
     // Cerramos el archivo
     fclose(cfPtr);
